@@ -2,34 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\System\DashboardController;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\Web\App\ShowAppLoginController;
+use App\Http\Controllers\Web\App\PerformAppLoginController;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home-site');
+
+
+Route::group([
+    'prefix' => 'app',
+    'middleware' => ['app.auth', 'checkUserProfiles']
+
+], function () {
+    Route::get('/', DashboardController::class)->name('app-dashboard');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-    'checkUserProfiles',
-])->group(function () {
-
-    Route::prefix('dashboard')->group(function () {
-
-        Route::get('/', DashboardController::class)->name('dashboard');
-
-
-    });
-});
+// Rota de login do cliente fora do middleware de autenticação
+Route::get('/app/login', ShowAppLoginController::class)->name('app-show-login');
+Route::post('/app/login', PerformAppLoginController::class)->name('app-login');
