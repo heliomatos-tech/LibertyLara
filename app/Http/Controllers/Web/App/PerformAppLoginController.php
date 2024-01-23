@@ -26,7 +26,7 @@ class PerformAppLoginController extends Controller
         if ($user && \Illuminate\Support\Facades\Hash::check($credentials['senha'], $user->senha)) {
             Auth::guard('app')->login($user);
             $request->session()->regenerate();
-            return redirect()->intended('app-dashboard');
+            return redirect()->intended('app');
         }
 
 
