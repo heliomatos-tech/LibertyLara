@@ -16,27 +16,13 @@ class PerformAppLoginController extends Controller
             'senha' => ['required'],
         ]);
 
-        // dd($credentials);
-
         $user = \App\Models\AppUsuario::where('email', $credentials['email'])->first();
-
-        // dd($user);
-
 
         if ($user && \Illuminate\Support\Facades\Hash::check($credentials['senha'], $user->senha)) {
             Auth::guard('app')->login($user);
             $request->session()->regenerate();
             return redirect()->intended('app');
         }
-
-
-        // $credentials = $request->only('email', 'senha');
-        // Auth::shouldUse('app');
-
-        // if (Auth::attempt($credentials)) {
-        //     $request->session()->regenerate();
-        //     return redirect()->intended('app-dashboard');
-        // }
 
         return back()->withErrors([
             'email||senha' => 'Usuário e/ou Senha inválidos.',
