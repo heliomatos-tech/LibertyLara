@@ -1,3 +1,4 @@
+{{-- @extends('layouts.main') --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -47,7 +48,7 @@
 
                         <div class="flex-1 hidden min-[420px]:block ml-3">
                             <div class="relative max-w-[180px] md:max-w-[350px]">
-                                <span class="text-2xl text-dark dark:text-white">Nome da Empresa atual</span>
+                                <span class="text-2xl text-dark dark:text-white">Nome da Empresa atual x1x</span>
                             </div>
                         </div>
 
@@ -83,6 +84,11 @@
                     <div class="flex flex-col gap-4 min-h-[calc(100vh-212px)]">
                         <livewire:main.MainCards />
                         <livewire:main.EvolucaoVendasGraph />
+                        <ul>
+                            @foreach ($options as $option)
+                                <li>{{ $option->opcao }}</li>
+                            @endforeach
+                        </ul>
                         <livewire:main.Footer />
                     </div>
                     <!-- End Content -->

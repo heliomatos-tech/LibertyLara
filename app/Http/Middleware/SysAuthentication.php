@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 use Illuminate\Support\Facades\Auth;
 
 class SysAuthentication
@@ -19,7 +20,6 @@ class SysAuthentication
         if (Auth::guard('sys')->check()) {
             return $next($request);
         }
-        dd('SysAuth', $request);
-        return redirect('/sys/login');
+        return redirect()->route('sys-show-login');
     }
 }

@@ -14,21 +14,21 @@
 
                 <div class="h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden xpx-5 pb-4 space-y-1 detached-menu">
 
-                    @if (count($UserProfiles) <= 0)
+                    {{-- @if (count($UserProfiles) <= 0)
                         <livewire:main.MainMenuNoProfile />
-                    @endif
+                    @endif --}}
 
 
-                    @if (count(array_intersect(['gestao', 'professor'], $UserProfiles)) > 0)
-                        <livewire:main.MainMenuDiarioProfessor />
+                    {{-- @if (count(array_intersect(['gestao', 'professor'], $UserProfiles)) > 0) --}}
+                    <livewire:main.MainMenuDiarioProfessor />
 
-                        @if (in_array('gestao', $UserProfiles))
-                            <livewire:main.MainMenuGestaoEscolar />
-                            <livewire:main.MainMenuRecursosHumanos />
-                            <livewire:main.MainMenuRelatorios />
-                            <livewire:main.MainMenuDocumentos />
-                        @endif
-                    @endif
+                    {{-- @if (in_array('gestao', $UserProfiles)) --}}
+                    <livewire:main.MainMenuGestaoEscolar />
+                    <livewire:main.MainMenuRecursosHumanos />
+                    <livewire:main.MainMenuRelatorios />
+                    <livewire:main.MainMenuDocumentos />
+                    {{-- @endif
+                    @endif --}}
 
                 </div>
             </div>

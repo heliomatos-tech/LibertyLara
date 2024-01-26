@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class ShowAppLoginController extends Controller
+class ShowLoginController extends Controller
 {
     public function __invoke()
     {
+        //Redireciona para o Dashboard se o usuário está logado
         if (Auth::guard('app')->check()) {
             return redirect()->route('app-dashboard');
         }
-
         return view('auth.app-login');
     }
 }

@@ -4,11 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
-class AppAuthentication
+class CheckSysProfiles
 {
     /**
      * Handle an incoming request.
@@ -17,10 +16,12 @@ class AppAuthentication
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::guard('app')->check()) {
-            return $next($request);
-        }
-        return redirect()->route('app-show-login');
+        // Adicione os perfis que deseja à view
+        $SysUserProfiles = ['view', 'editor', 'master', 'super'];
+
+        // Compartilhe os perfis com todas as views
+        View::share('SysUserProfiles', $SysUserProfiles);
+
+        return $next($request);
     }
 }
-

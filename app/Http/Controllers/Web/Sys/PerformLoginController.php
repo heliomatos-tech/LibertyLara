@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Web\App;
+namespace App\Http\Controllers\Web\Sys;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class PerformAppLoginController extends Controller
+class PerformLoginController extends Controller
 {
     public function __invoke(Request $request)
     {
@@ -16,12 +16,12 @@ class PerformAppLoginController extends Controller
             'senha' => ['required'],
         ]);
 
-        $user = \App\Models\AppUsuario::where('email', $credentials['email'])->first();
+        $user = \App\Models\SysUsuario::where('email', $credentials['email'])->first();
 
         if ($user && \Illuminate\Support\Facades\Hash::check($credentials['senha'], $user->senha)) {
-            Auth::guard('app')->login($user);
+            Auth::guard('sys')->login($user);
             $request->session()->regenerate();
-            return redirect()->intended('app');
+            return redirect()->intended('sys');
         }
 
         return back()->withErrors([
