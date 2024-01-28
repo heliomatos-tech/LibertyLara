@@ -24,10 +24,10 @@ document.addEventListener("alpine:init", () => {
         toggleSidebar() {
             this.sidebar = !this.sidebar;
         },
-        mode: Alpine.$persist("light"),
+        mode: Alpine.$persist("dark"),
         toggleMode(val) {
             if (!val) {
-                val = this.mode || "light"; // light/Dark
+                val = this.mode || "light";
             }
             this.mode = val;
         },

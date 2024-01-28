@@ -4,7 +4,7 @@
         &copy;
         {{ $actual_year }} - {{ config('app.name', 'InDev') }}
         <span class="float-right hidden md:inline-block">Desenvolvido por
-            <b> VÁLEGA Soluções </b>
+            <b> Liberty Manager Soluções em TI </b>
         </span>
     </footer>
     <!-- End Footer -->

@@ -8,6 +8,8 @@ use App\Http\Controllers\Web\App\DashboardController;
 use App\Http\Controllers\Web\App\ShowLoginController;
 use App\Http\Controllers\Web\App\PerformLoginController;
 use App\Http\Controllers\Web\App\LogoutController;
+use App\Http\Controllers\Web\App\GerenciadorNFeController;
+use App\Livewire\App\GerenciadorNfe;
 /**
  * Rotas do Admin
  */
@@ -32,12 +34,14 @@ Route::group([
 
 ], function () {
     Route::get('/', DashboardController::class)->name('app-dashboard');
-});
+    Route::get('/nfe/gerenciador', GerenciadorNfe::class)->name('app-gerenciador-nfe');
+    // Rota de login do cliente fora do middleware de autenticação
+    Route::get('/login', ShowLoginController::class)->name('app-show-login');
+    Route::post('/login', PerformLoginController::class)->name('app-login');
+    Route::get('/logout', LogoutController::class)->name('app-logout');
+})->withoutMiddleware(['app-show-login', 'app-show-login']);
 
-// Rota de login do cliente fora do middleware de autenticação
-Route::get('/app/login', ShowLoginController::class)->name('app-show-login');
-Route::post('/app/login', PerformLoginController::class)->name('app-login');
-Route::get('/app/logout', LogoutController::class)->name('app-logout');
+
 
 /**
  * Rotas do Sistema de Administração

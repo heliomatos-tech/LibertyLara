@@ -27,7 +27,7 @@
         <!-- Start Main Content -->
         <div class="main-container flex mx-auto">
             <!-- Start Sidebar -->
-            <livewire:main.MainMenuNav />
+            <livewire:app.MainMenuNav />
             <!-- End sidebar -->
 
             <!-- Start Content Area -->
@@ -67,28 +67,13 @@
                 <!-- Start Content -->
                 <div
                     class="h-[calc(100vh-60px)] relative overflow-y-auto overflow-x-hidden p-4 space-y-4 detached-content">
-                    <!-- Start Breadcrumb -->
-                    {{-- <div>
-                        <nav class="w-full">
-                            <ul class="space-y-2 detached-breadcrumb">
-                                <li class="text-xs dark:text-white/80">Sliced</li>
-                                <li class="text-black dark:text-white font-semibold text-xl">
-                                    Dashboard
-                                </li>
-                            </ul>
-                        </nav>
-                    </div> --}}
-                    <!-- End Breadcrumb -->
+
 
                     <!-- Start All Card -->
                     <div class="flex flex-col gap-4 min-h-[calc(100vh-212px)]">
+                        @yield('main-content')
                         <livewire:main.MainCards />
                         <livewire:main.EvolucaoVendasGraph />
-                        <ul>
-                            @foreach ($options as $option)
-                                <li>{{ $option->opcao }}</li>
-                            @endforeach
-                        </ul>
                         <livewire:main.Footer />
                     </div>
                     <!-- End Content -->

@@ -17,7 +17,7 @@ class AppAuthentication
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::guard('app')->check()) {
+        if (Auth::guard('app')->check() || $request->routeIs(['app-show-login', 'app-login'])) {
             return $next($request);
         }
         return redirect()->route('app-show-login');

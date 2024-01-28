@@ -14,7 +14,6 @@ class ListMenuRepository implements IListMenuRepository
      */
     public function listAllOptions(): Collection
     {
-
         $options = SysMenu::where('pai', '<=', 0)
             ->where('modulo', 'app')
             ->where('exibir', 'S')

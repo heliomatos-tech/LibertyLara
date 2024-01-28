@@ -17,7 +17,7 @@ class SysMenu extends Model
      */
     public function childs(): ?HasMany
     {
-        return $this->hasMany(SysMenu::class, 'pai', 'id');
+        return $this->hasMany(self::class, 'pai', 'menu');
     }
 
 }

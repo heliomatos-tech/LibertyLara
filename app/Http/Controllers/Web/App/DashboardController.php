@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Web\App;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-//
 use App\Architecture\Menu\Actions\ListMenuAction;
+use Illuminate\View\View;
 
 
 class DashboardController extends Controller
@@ -26,10 +25,9 @@ class DashboardController extends Controller
     /**
      * @return void
      */
-    public function __invoke()
+    public function __invoke(): View
     {
         $options = $this->ListMenuAction->execute();
-
         return view('app.dashboard', compact('options'));
 
     }

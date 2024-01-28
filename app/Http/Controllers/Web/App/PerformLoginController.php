@@ -21,6 +21,7 @@ class PerformLoginController extends Controller
         if ($user && \Illuminate\Support\Facades\Hash::check($credentials['senha'], $user->senha)) {
             Auth::guard('app')->login($user);
             $request->session()->regenerate();
+            \Cache::forget('menu_options');
             return redirect()->intended('app');
         }
 
