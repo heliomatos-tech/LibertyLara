@@ -17,10 +17,17 @@ class MainMenuNav extends Component
     /**
      * Nome do módulo para montar o menu
      *
-     * @var String
+     * @var string
      */
     public string $module = 'app';
 
+
+    /**
+     * Diretiva de navegação do livewire
+     *
+     * @var string
+     */
+    public string $navigate = 'wire:navigate';
     /**
      * @var IListMenuRepository
      */

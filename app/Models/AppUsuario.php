@@ -9,11 +9,24 @@ use Illuminate\Notifications\Notifiable;
 
 class AppUsuario extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     protected $table = 'app_usuario';
 
     protected $fillable = [
-
+        'nome',
+        'email',
+        'senha',
     ];
+
+    protected $hidden = [
+        'senha',
+        'remember_token',
+    ];
+
+    // Nome do campo de senha na tabela
+    public function getAuthPassword()
+    {
+        return $this->senha;
+    }
 }

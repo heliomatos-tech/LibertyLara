@@ -10,4 +10,5 @@ class GerenciadorNfe extends Component
     {
         return view('livewire.app.gerenciador-nfe');
     }
+
 }

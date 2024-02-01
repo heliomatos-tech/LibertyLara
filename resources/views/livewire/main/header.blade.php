@@ -9,13 +9,9 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+    @livewireStyles
     <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-
-    <!-- Styles -->
-
-    <!-- Style Css -->
-
-    <script src="assets/js/3.3.5.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="{{ asset('assets/js/3.3.5.js') }}"></script>
+    <!-- css -->
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
 </header>

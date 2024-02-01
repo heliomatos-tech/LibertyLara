@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Web\App;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\{Auth, Hash};
 
 
 class PerformLoginController extends Controller
@@ -18,13 +18,13 @@ class PerformLoginController extends Controller
 
         $user = \App\Models\AppUsuario::where('email', $credentials['email'])->first();
 
-        if ($user && \Illuminate\Support\Facades\Hash::check($credentials['senha'], $user->senha)) {
+        if ($user && Hash::check($credentials['senha'], $user->senha)) {
             Auth::guard('app')->login($user);
             $request->session()->regenerate();
             \Cache::forget('menu_options');
+            $user = Auth::user();
             return redirect()->intended('app');
         }
-
         return back()->withErrors([
             'email||senha' => 'Usuário e/ou Senha inválidos.',
         ])->onlyInput('email');

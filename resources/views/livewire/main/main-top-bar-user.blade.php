@@ -2,7 +2,8 @@
     <button type="button" class="flex items-center gap-1.5 xl:gap-0 dark:text-white/80" x-on:click="toggle()"
         title="Usuário Logado">
         <img class="h-7 w-7 rounded-full xl:mr-2" src="assets/images/user.png" alt="Header Avatar" />
-        <span class="fw-medium hidden xl:block dark:text-white/80">Nome do usuario</span>
+        {{-- <span class="fw-medium hidden xl:block dark:text-white/80">Nome do usuario</span> --}}
+        <span class="fw-medium hidden xl:block dark:text-white/80">{{ Auth::user()->nome }}</span>
         <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path

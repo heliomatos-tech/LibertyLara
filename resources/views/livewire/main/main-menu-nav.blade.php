@@ -4,11 +4,12 @@
             <div class="bg-white dark:bg-darklight h-full">
                 <div class="p-1">
                     <a href="index.html" class="main-logo w-full">
-                        <img src="assets/images/educadf_digital_logo.png" class="xmx-auto dark-logo logo dark:hidden"
-                            alt="logo" />
-                        <img src="assets/images/educadf_digital_logo.png"
-                            class="xmx-auto light-logo logo hidden dark:block" alt="logo" />
-                        <img src="assets/images/educadf_digital_icon.png" class="logo-icon hidden" alt="" />
+                        <img src="{{ asset('assets/images/educadf_digital_logo.png') }}"
+                            class="dark-logo logo dark:hidden" alt="logo" />
+                        <img src="{{ asset('assets/images/educadf_digital_logo.png') }}"
+                            class="light-logo logo hidden dark:block" alt="logo" />
+                        <img src="{{ asset('assets/images/educadf_digital_icon.png') }}" class="logo-icon hidden"
+                            alt="logomarca" />
                     </a>
                 </div>
 

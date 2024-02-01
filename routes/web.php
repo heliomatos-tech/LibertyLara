@@ -30,15 +30,27 @@ Route::get('/', function () {
  */
 Route::group([
     'prefix' => 'app',
-    'middleware' => ['AppAuth', 'CheckUserProfiles']
+    'middleware' => ['AppAuth', 'CheckUserProfiles', 'CheckAjaxRequest']
 
 ], function () {
+    /**
+     * Rotas autenticadas
+     */
     Route::get('/', DashboardController::class)->name('app-dashboard');
-    Route::get('/nfe/gerenciador', GerenciadorNfe::class)->name('app-gerenciador-nfe');
-    // Rota de login do cliente fora do middleware de autenticação
+    Route::get('/pdv', GerenciadorNfeController::class)->name('app-vendas-pdv');
+    Route::get('/nfe/gerenciador', GerenciadorNfeController::class)->name('app-gerenciador-nfe');
+    Route::get('/nfe/nova', GerenciadorNfeController::class)->name('app-nova-nfe');
+    Route::get('/nfce/nova', GerenciadorNfeController::class)->name('app-nova-nfce');
+    Route::get('/nfse/nova', GerenciadorNfeController::class)->name('app-nova-nfse');
+    /**
+     * Para deslogar, o usuario tem que estar logado
+     */
+    Route::get('/logout', LogoutController::class)->name('app-logout');
+    /**
+     * Rota de login do app fora do middleware de autenticação
+     */
     Route::get('/login', ShowLoginController::class)->name('app-show-login');
     Route::post('/login', PerformLoginController::class)->name('app-login');
-    Route::get('/logout', LogoutController::class)->name('app-logout');
 })->withoutMiddleware(['app-show-login', 'app-show-login']);
 
 
