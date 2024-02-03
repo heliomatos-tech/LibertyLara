@@ -21,6 +21,9 @@ class CheckSysProfiles
 
         // Compartilhe os perfis com todas as views
         View::share('SysUserProfiles', $SysUserProfiles);
+        //Compartilhar se é uma requisição AJAX em todas as views
+        $showLayout = !($request->headers->has('X-Requested-With'));
+        View::share('showLayout', $showLayout);
 
         return $next($request);
     }

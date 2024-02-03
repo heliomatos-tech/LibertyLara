@@ -4,11 +4,11 @@
             <div class="bg-white dark:bg-darklight h-full">
                 <div class="p-1">
                     <a href="index.html" class="main-logo w-full">
-                        <img src="{{ asset('assets/images/educadf_digital_logo.png') }}"
-                            class="dark-logo logo dark:hidden" alt="Logo" />
-                        <img src="{{ asset('assets/images/educadf_digital_logo.png') }}"
+                        <img src="{{ asset('assets/images/logo-color-300.png') }}" class="dark-logo logo dark:hidden"
+                            alt="Logo" />
+                        <img src="{{ asset('assets/images/logo-color-300.png') }}"
                             class="light-logo logo hidden dark:block" alt="Logo" />
-                        <img src="{{ asset('assets/images/educadf_digital_icon.png') }}" class="logo-icon hidden"
+                        <img src="{{ asset('assets/images/logo-color-300.png') }}" class="logo-icon hidden"
                             alt="Logo" />
                     </a>
                 </div>

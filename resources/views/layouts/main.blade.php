@@ -89,7 +89,7 @@
     <script src="{{ asset('assets/js/alpine-collaspe.min.js') }}"></script>
     {{-- <script src="assets/js/alpine-persist.min.js"></script> --}}
     <!-- Chart Js -->
-    <script src="{{ asset('assets/js/apexcharts.js') }}"></script>
+    <script src="{{ asset('assets/js/apexcharts.js') }}" defer></script>
     <script src="{{ asset('assets/js/appexchart-app.js') }}" defer></script>
     <script src="{{ asset('assets/js/perfect-scrollbar.min.js') }}" defer></script>
     <!-- Custom js -->
@@ -99,36 +99,42 @@
     <script>
         function loadPage(page) {
             fetch(`${page}`, {
-
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest'
-                        }
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
                     }
-
-                )
-                .then(response => response.text())
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new FetchError('Fetch failed', response);
+                    }
+                    return response.text();
+                })
                 .then(html => {
-                    document.getElementById('main-content').innerHTML = html;
-                    // Atualize a URL sem recarregar a página
-                    // history.pushState({
-                    //     page
-                    // }, '', `${page}`)
 
+                    if (document.getElementById('main-content').innerHTML !== html) {
+                        document.getElementById('main-content').innerHTML = html;
+                        history.pushState({
+                            url: page
+                        }, '', page);
+                    }
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro:', error);
                 });
         }
 
-        // window.addEventListener('popstate', function(event) {
-        //     if (event.state) {
-        //         loadPage(event.state.page);
-        //     }
-        // });
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.url) {
+                loadPage(event.state.url);
+            }
+        });
 
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     const path = window.location.pathname.split('/')[2];
-        //     if (path) {
-        //         loadPage(path);
-        //     }
-        // });
+        class FetchError extends Error {
+            constructor(message, response) {
+                super(message);
+                this.response = response;
+            }
+        }
     </script>
 </body>
 

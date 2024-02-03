@@ -15,6 +15,6 @@ class ShowLoginController extends Controller
         if (Auth::guard('app')->check()) {
             return redirect()->route('app-dashboard');
         }
-        return view('auth.app-login');
+        return view('app.login');
     }
 }

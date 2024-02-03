@@ -8,7 +8,21 @@ use App\Http\Controllers\Web\App\DashboardController;
 use App\Http\Controllers\Web\App\ShowLoginController;
 use App\Http\Controllers\Web\App\PerformLoginController;
 use App\Http\Controllers\Web\App\LogoutController;
-use App\Http\Controllers\Web\App\GerenciadorNFeController;
+/**
+ * Nfe
+ */
+use App\Http\Controllers\Web\App\NfeNewController;
+/**
+ * NFCe
+ */
+use App\Http\Controllers\Web\App\NfceNewController;
+
+/**
+ * NFSe
+ */
+use App\Http\Controllers\Web\App\NfseNewController;
+
+use App\Http\Controllers\Web\App\ManagerNFeController;
 use App\Livewire\App\GerenciadorNfe;
 /**
  * Rotas do Admin
@@ -37,11 +51,11 @@ Route::group([
      * Rotas autenticadas
      */
     Route::get('/', DashboardController::class)->name('app-dashboard');
-    Route::get('/pdv', GerenciadorNfeController::class)->name('app-vendas-pdv');
-    Route::get('/nfe/gerenciador', GerenciadorNfeController::class)->name('app-gerenciador-nfe');
-    Route::get('/nfe/nova', GerenciadorNfeController::class)->name('app-nova-nfe');
-    Route::get('/nfce/nova', GerenciadorNfeController::class)->name('app-nova-nfce');
-    Route::get('/nfse/nova', GerenciadorNfeController::class)->name('app-nova-nfse');
+    Route::get('/pdv', ManagerNFeController::class)->name('app-vendas-pdv');
+    Route::get('/nfe/gerenciador', ManagerNFeController::class)->name('app-gerenciador-nfe');
+    Route::get('/nfe/nova', NfeNewController::class)->name('app-nova-nfe');
+    Route::get('/nfce/nova', NfceNewController::class)->name('app-nova-nfce');
+    Route::get('/nfse/nova', NfseNewController::class)->name('app-nova-nfse');
     /**
      * Para deslogar, o usuario tem que estar logado
      */
