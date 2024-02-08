@@ -42,6 +42,7 @@
     font-weight: 700;
 }
 
+
 *,
 ::before,
 ::after {
@@ -409,6 +410,13 @@ textarea::placeholder {
     /* 2 */
 }
 
+.p-form-input{
+    padding: 0.6rem 0.4rem !important;
+}
+
+.m-form-input{
+    margin: 0.1rem !important;
+}
 /*
 Set the default cursor for buttons.
 */
@@ -480,8 +488,8 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: #fff;
-    border-color: #6b7280;
+    /* background-color: #fff; */
+    /* border-color: #6b7280; */
     border-width: 1px;
     border-radius: 0px;
     padding-top: 0.5rem;

@@ -19,20 +19,26 @@
 
                         @csrf
 
-                        <!-- Username Input -->
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-600">Email</label>
-                            <input type="text" id="email" name="email"
-                                class="w-full border border-gray-300 rounded-md py-4 px-3 focus:outline-none focus:border-blue-500"
-                                autocomplete="off" placeholder="email">
+                        <!--Email input-->
+                        <div class="relative mb-5">
+                            <input type="email"
+                                class="peer m-0 block h-[58px] w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent focus:!border-[#767e89] focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+                                id="email" name="email" placeholder="name@example.com" />
+                            <label for="email"
+                                class="pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 text-neutral-500 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Email</label>
                         </div>
-                        <!-- Password Input -->
-                        <div class="mb-4">
-                            <label for="senha" class="block text-gray-600">Senha</label>
-                            <input type="password" id="senha" name="senha"
-                                class="w-full border border-gray-300 rounded-md py-4 px-3 focus:outline-none focus:border-blue-500"
-                                autocomplete="off" placeholder="senha">
+
+                        <!--Password input-->
+                        <div class="relative mb-5 mt-10">
+                            <input type="password"
+                                class="peer m-0 block h-[58px] w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent focus:!border-[#767e89] focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary dark:border-neutral-600 dark:text-neutral-200 dark:focus:border-primary dark:peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+                                id="senha" name="senha" placeholder="Senha" />
+                            <label for="senha"
+                                class="pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 text-neutral-500 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Senha</label>
                         </div>
+
+
+
                         <!-- Forgot Password Link -->
                         <div class="flex justify-end mb-6 text-blue-500">
                             <a href="#" class="hover:underline text-[#747c87]">Esqueci minha senha</a>

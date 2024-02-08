@@ -71,7 +71,6 @@
                     <div class="flex flex-col gap-4 min-h-[calc(100vh-212px)]" id="main-content">
 
                         @yield('main-content')
-                        {{-- {{ $slot }} --}}
 
                     </div>
                     <!-- End Content -->
@@ -97,37 +96,50 @@
 
     @livewireScripts
     <script>
-        function loadPage(page) {
-            fetch(`${page}`, {
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new FetchError('Fetch failed', response);
-                    }
-                    return response.text();
-                })
-                .then(html => {
+        function pageLoader() {
+            return {
+                currentUrl: window.location.pathname,
 
-                    if (document.getElementById('main-content').innerHTML !== html) {
-                        document.getElementById('main-content').innerHTML = html;
-                        history.pushState({
-                            url: page
-                        }, '', page);
+                init() {
+                    window.addEventListener('popstate', this.handlePopstate.bind(this));
+                },
+
+                loadPage(page) {
+                    fetch(page, {
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new FetchError('Ocorreu uma falha na requisição', response);
+                            }
+                            return response.text();
+                        })
+                        .then(html => {
+                            document.getElementById('main-content').innerHTML = html;
+
+                            // Atualize a URL no endereço do navegador e adicione um novo estado ao histórico
+                            window.history.pushState({
+                                url: page
+                            }, '', page);
+                            this.currentUrl = page;
+                        })
+                        .catch(error => {
+                            console.error('Ocorreu um erro:', error);
+                        });
+                },
+
+                handlePopstate(event) {
+                    if (event.state && event.state.url) {
+                        this.loadPage(event.state.url);
+                    } else {
+                        // Se não houver estado associado, recarregue a página atual
+                        this.loadPage(this.currentUrl);
                     }
-                })
-                .catch(error => {
-                    console.error('Ocorreu um erro:', error);
-                });
+                }
+            };
         }
-
-        window.addEventListener('popstate', (event) => {
-            if (event.state && event.state.url) {
-                loadPage(event.state.url);
-            }
-        });
 
         class FetchError extends Error {
             constructor(message, response) {
@@ -136,6 +148,8 @@
             }
         }
     </script>
+
+
 </body>
 
 </html>

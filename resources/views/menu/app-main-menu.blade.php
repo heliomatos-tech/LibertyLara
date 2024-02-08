@@ -3,7 +3,7 @@
             class="sidebar fixed z-[9999] flex-none w-[360px] border-r dark:bg-darkborder border-black/10 transition-all duration-300 overflow-hidden">
             <div class="bg-white dark:bg-darklight h-full">
                 <div class="p-1">
-                    <a href="index.html" class="main-logo w-full">
+                    <a href="/app" class="main-logo w-full">
                         <img src="{{ asset('assets/images/logo-color-300.png') }}" class="dark-logo logo dark:hidden"
                             alt="Logo" />
                         <img src="{{ asset('assets/images/logo-color-300.png') }}"
@@ -12,11 +12,11 @@
                             alt="Logo" />
                     </a>
                 </div>
-
+                {{-- 
                 <div class="h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden xpx-5 pb-4 space-y-1 detached-menu"
-                    x-data="{ currentPage: '' }">
-
-
+                    x-data="{ currentPage: '' }"> --}}
+                <div class="h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden xpx-5 pb-4 space-y-1 detached-menu"
+                    x-data="pageLoader()" x-init="init()">
                     <div>
                         <ul>
 
