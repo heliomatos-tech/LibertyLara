@@ -24,7 +24,8 @@
         <!-- End Menu Sidebar Olverlay -->
 
         <!-- Start Main Content -->
-        <div class="main-container flex mx-auto">
+        <div class="main-container flex mx-auto" x-data="app()" x-init="init()">
+
             <!-- Start Sidebar -->
             <livewire:app.MainMenuNav />
             <!-- End sidebar -->
@@ -83,10 +84,7 @@
     <!-- End Layout -->
 
     <!-- Alpine js -->
-    {{-- @livewireScripts() --}}
-    {{-- <script src="{{ asset('assets/js/alpine-ajax.min.js') }}" defer></script> --}}
     <script src="{{ asset('assets/js/alpine-collaspe.min.js') }}"></script>
-    {{-- <script src="assets/js/alpine-persist.min.js"></script> --}}
     <!-- Chart Js -->
     <script src="{{ asset('assets/js/apexcharts.js') }}" defer></script>
     <script src="{{ asset('assets/js/appexchart-app.js') }}" defer></script>
@@ -96,7 +94,7 @@
 
     @livewireScripts
     <script>
-        function pageLoader() {
+        function app() {
             return {
                 currentUrl: window.location.pathname,
 
@@ -118,8 +116,6 @@
                         })
                         .then(html => {
                             document.getElementById('main-content').innerHTML = html;
-
-                            // Atualize a URL no endereço do navegador e adicione um novo estado ao histórico
                             window.history.pushState({
                                 url: page
                             }, '', page);
@@ -133,10 +129,9 @@
                 handlePopstate(event) {
                     if (event.state && event.state.url) {
                         this.loadPage(event.state.url);
-                    } else {
-                        // Se não houver estado associado, recarregue a página atual
-                        this.loadPage(this.currentUrl);
+                        return;
                     }
+                    this.loadPage(this.currentUrl);
                 }
             };
         }

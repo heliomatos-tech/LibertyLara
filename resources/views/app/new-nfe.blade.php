@@ -1,31 +1,42 @@
 @extends($showLayout ? 'layouts.main' : 'layouts.blank')
 @section('main-content')
     <!--{tpl_arr_produtos_servicos}-->
+    <span class="page-title text-dark dark:text-white icon-dark">Cadastrar Nova NFe</span>
     <div id="form-dados-nfe" data-target="{%action_form%}">
         <input type='hidden' class="no-clear" id='action' value="{%action%}">
-        <input type='hidden' class="no-clear hidden" name="guid" value="{%nu_guid%}">
-        <input type='hidden' class="no-clear hidden" name="token" value="{%nu_token%}">
+        <input type='hidden' class="no-clear hidden" name="guid" value="">
+        <input type='hidden' class="no-clear hidden" name="token" value="">
         <div class="clearfix"></div>
         <div class="flex flex-wrap ">
-            <div class="w-full mb-4">
+            <div class="flex justify-between gap-5 mb-4">
                 <button
-                    class="align-middle text-center select-none border font-normal rounded text-gray-600 border-gray-600 hover:text-white bg-[#dfdfdf] hover:bg-gray-700 !py-2 !px-3 mr-3"
-                    id="btn-form-destinatario">Destinatário</button>
+                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
+                    id="btn-form-destinatario" x-on:click="modalHandler(true)">
+                    Destinatário
+                </button>
                 <button
-                    class="align-middle text-center select-none border font-normal rounded text-gray-600 border-gray-600 hover:text-white bg-[#dfdfdf] hover:bg-gray-700 !py-2 !px-3 mr-3"
-                    id="btn-form-faturamento">Pagamento</button>
+                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
+                    id="btn-form-faturamento">
+                    Pagamento
+                </button>
                 <button
-                    class="align-middle text-center select-none border font-normal rounded text-gray-600 border-gray-600 hover:text-white bg-[#dfdfdf] hover:bg-gray-700 !py-2 !px-3 mr-3"
-                    id="btn-form-impostos">Impostos e Retenções</button>
+                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
+                    id="btn-form-impostos">
+                    Impostos e Retenções
+                </button>
                 <button
-                    class="align-middle text-center select-none border font-normal rounded text-gray-600 border-gray-600 hover:text-white bg-[#dfdfdf] hover:bg-gray-700 !py-2 !px-3 mr-3"
-                    id="btn-form-transporte">Frete/Transporte</button>
+                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
+                    id="btn-form-transporte">
+                    Frete/Transporte
+                </button>
                 <button
-                    class="align-middle text-center select-none border font-normal rounded text-gray-600 border-gray-600 hover:text-white bg-[#dfdfdf] hover:bg-gray-700 !py-2 !px-3"
-                    id="btn-form-documentos">Documentos Referenciados</button>
+                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
+                    id="btn-form-documentos">
+                    Documentos Referenciados
+                </button>
             </div>
-            <div id="dados-secundarios" class="flex flex-wrap  relative flex-grow max-w-full flex-1">
-                <!--{tpl_box_nfe_destinatario}-->
+            <div id="dados-secundarios" class="none">
+                <x-nfe-destinatario />
                 <!--{tpl_box_nfe_faturamento}-->
                 <!--{tpl_box_nfe_transporte}-->
                 <!--{tpl_box_nfe_impostos}-->
@@ -44,9 +55,9 @@
                             Operação:</label>
                         <input type=text
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded p-form-input form-input"
-                            name="ds_natureza" id="ds_natureza" list="lst_ds_natureza" value="{%ds_natureza%}" />
+                            name="ds_natureza" id="ds_natureza" list="lst_ds_natureza" value="" />
                         <datalist id="lst_ds_natureza">
-                            <option value="Venda"></option>
+                            <option value="Venda de Produtos"></option>
                             <option value="Prestação de Serviços"></option>
                         </datalist>
                     </div>
@@ -57,8 +68,7 @@
                                 class="text-base text-black dark:text-white/80 mb-4">Destinatário:</label>
                             <input type=text readonly
                                 class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded p-form-input form-input"
-                                id="dest_nome_view" placeholder="Faltando os dados do Destinatário"
-                                value="{%dest_ds_nome%}" />
+                                id="dest_nome_view" placeholder="Faltando os dados do Destinatário" value="" />
                         </div>
                         <div class="md:w-1/4 sm:w-2/3 float-left mb-4">
                             <label for="tp_finalidade" class="text-base text-black dark:text-white/80 mb-4">Finalidade da
@@ -106,7 +116,8 @@
 
 
                         <div class="md:w-1/5 pr-4 pl-4 float-left mb-4">
-                            <label for="preco_prod" class="text-base text-black dark:text-white/80 mb-4">Preço Unit:</label>
+                            <label for="preco_prod" class="text-base text-black dark:text-white/80 mb-4">Preço
+                                Unit:</label>
                             <input type="text"
                                 class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required float_point form-input"
                                 id="preco_prod" value="" disabled>
@@ -133,7 +144,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <table id="tabela-itens-nfe" class="w-full max-w-full mb-4 bg-transparent table-striped dt-responsive nowrap" width="100%" cellspacing="0"> -->
                     <table id="itens-nfe" class="w-full max-w-full mb-4 bg-transparent table-striped dt-responsive nowrap"
                         width="100%" cellspacing="0">
                         <colgroup>
@@ -165,12 +175,13 @@
                         <div class="relative flex items-stretch w-full mb-4">
                             <input
                                 class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                type="text" id="vl_frete" name="vl_frete" data-decimals="2" value="{%vl_frete%}" />
+                                type="text" id="vl_frete" name="vl_frete" data-decimals="2" value="" />
                             <span class="input-group-append">
                                 <button type="button"
                                     class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700 btn-rateio"
-                                    data-toggle="tooltip" title="Ratear Frete" data-target="vl_frete"><span
-                                        class="fa fa-calculator"></span></button>
+                                    data-toggle="tooltip" title="Ratear Frete" data-target="vl_frete">
+                                    <span class="fa fa-calculator"></span>
+                                </button>
                             </span>
                         </div>
                     </div>
@@ -179,8 +190,7 @@
                         <div class="relative flex items-stretch w-full mb-4">
                             <input
                                 class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                type="text" id="vl_seguro" name="vl_seguro" data-decimals="2"
-                                value="{%vl_seguro%}" />
+                                type="text" id="vl_seguro" name="vl_seguro" data-decimals="2" value="" />
                             <span class="input-group-append">
                                 <button type="button"
                                     class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700 btn-rateio"
@@ -194,8 +204,7 @@
                         <div class="relative flex items-stretch w-full mb-4">
                             <input
                                 class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                type="text" id="vl_outras" name="vl_outras" data-decimals="2"
-                                value="{%vl_outras%}" />
+                                type="text" id="vl_outras" name="vl_outras" data-decimals="2" value="" />
                             <span class="input-group-append">
                                 <button type="button"
                                     class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700 btn-rateio"
@@ -209,8 +218,7 @@
                         <div class="relative flex items-stretch w-full mb-4">
                             <input
                                 class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                type="text" id="vl_desconto" name="vl_desconto" data-decimals="2"
-                                value="{%vl_desconto%}" />
+                                type="text" id="vl_desconto" name="vl_desconto" data-decimals="2" value="" />
                             <span class="input-group-append">
                                 <button type="button"
                                     class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white btn-rateio"
@@ -225,7 +233,7 @@
                             <div class="mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded money font-bold no-required"
-                                    type="text" dir="rtl" id="vl_total" name="vl_total" value="{%vl_total%}"
+                                    type="text" dir="rtl" id="vl_total" name="vl_total" value=""
                                     readonly />
                             </div>
                         </div>
@@ -240,7 +248,7 @@
                     </div>
                     <textarea name="ds_complementares"
                         class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required form-textarea !h-[12rem]"
-                        rows="4" id="ds_complementares">{%ds_complementares%}</textarea>
+                        rows="4" id="ds_complementares"></textarea>
                 </div>
                 <div class="lg:w-1/3 md:w-full flex flex-col">
 
@@ -250,10 +258,10 @@
 
                     <textarea name="ds_fisco"
                         class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required form-textarea !h-[12rem]"
-                        rows="4" id="ds_fisco">{%ds_fisco%}
+                        rows="4" id="ds_fisco">
                 </textarea>
                     <button
-                        class="align-middle text-center select-none border font-normal rounded text-gray-600 border-gray-600 hover:text-white bg-[#dfdfdf] hover:bg-gray-700 !py-2 !px-3 mr-3 self-end"
+                        class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-gray-700 !py-1 !px-3 mt-2 self-end"
                         id="btn-obs-fisco">Observações ao Fisco
                     </button>
                 </div>
@@ -334,17 +342,41 @@
         <!-- obs fisco -->
 
 
-        <div class="flex flex-wrap  text-right mt-5">
-            <div class="md:w-full pr-4 pl-4">
-                <a href="app/nfe/gerenciador/{%nu_guid%}/{%nu_token%}"
-                    class="align-middle text-center select-none border rounded px-5 py-3 text-red-600 border-red-600 hover:text-white bg-white hover:bg-red-700 mr-7"><span
-                        class="fa fa-times mr-3"></span>Cancelar
-                </a>
-                <a id="btn-salva-nfe"
-                    class="align-middle text-center select-none border rounded px-5 py-3 text-teal-500 border-teal-500 hover:text-white bg-white hover:bg-teal-600 cursor-pointer"
-                    name="btn-salva-nfe" value="salvar"><span class="fa fa-save mr-3"></span>Salvar NF-e
-                </a>
-            </div>
+        <div class="flex justify-end mt-5">
+
+            <a href="app/nfe/gerenciador/{%nu_guid%}/{%nu_token%}"
+                class="flex gap-2 items-center select-none border rounded p-2 text-red-600 border-red-600 hover:text-white dark:bg-black hover:bg-red-700 mr-7">
+
+                <svg class="feather feather-x" fill="none" height="24" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" x2="6" y1="6" y2="18" />
+                    <line x1="6" x2="18" y1="6" y2="18" />
+                </svg>
+                <span>
+                    Cancelar
+                </span>
+            </a>
+
+
+            <a id="btn-salva-nfe"
+                class="flex gap-2 items-center select-none border rounded p-2 text-teal-500 border-teal-500 hover:text-white dark:bg-black hover:bg-teal-600 cursor-pointer"
+                name="btn-salva-nfe" value="salvar">
+
+
+                <svg class="feather feather-save" fill="none" height="24" stroke="currentColor" class="w-7 h-7"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                    <polyline points="17 21 17 13 7 13 7 21" />
+                    <polyline points="7 3 7 8 15 8" />
+                </svg>
+
+
+                <span>
+                    Salvar NF-e
+                </span>
+            </a>
         </div>
 
     </div>

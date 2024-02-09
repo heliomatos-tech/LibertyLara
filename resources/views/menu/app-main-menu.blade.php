@@ -15,8 +15,7 @@
                 {{-- 
                 <div class="h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden xpx-5 pb-4 space-y-1 detached-menu"
                     x-data="{ currentPage: '' }"> --}}
-                <div class="h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden xpx-5 pb-4 space-y-1 detached-menu"
-                    x-data="pageLoader()" x-init="init()">
+                <div class="h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden xpx-5 pb-4 space-y-1 detached-menu">
                     <div>
                         <ul>
 

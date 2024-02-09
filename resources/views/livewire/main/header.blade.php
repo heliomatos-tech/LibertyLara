@@ -14,9 +14,9 @@
     <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('assets/images//favicon256.png') }}">
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+    {{-- <link rel="preconnect" href="https://fonts.bunny.net"> --}}
+    {{-- <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
+    <link href="{{ asset('assets/css/remixicon.css') }}" rel="stylesheet" />
     <!-- Scripts -->
     <script src="{{ asset('assets/js/3.3.5.js') }}"></script>
     <!-- css -->

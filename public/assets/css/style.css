@@ -1572,7 +1572,7 @@ table.table-borderless tfoot tr {
 .form-select:focus,
 .form-multiselect:focus {
     --tw-border-opacity: 1;
-    border-color: rgb(106 105 245 / var(--tw-border-opacity));
+    border-color: #cfcfcf;
     --tw-shadow: 0 0 #0000 !important;
     --tw-shadow-colored: 0 0 #0000 !important;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
@@ -1618,7 +1618,7 @@ table.table-borderless tfoot tr {
 :is(.dark .form-select:focus),
 :is(.dark .form-multiselect:focus) {
     --tw-border-opacity: 1;
-    border-color: rgb(106 105 245 / var(--tw-border-opacity));
+    border-color: #cfcfcf;
 }
 
 .text-editor body h1 {
@@ -4867,3 +4867,21 @@ table.table-borderless tfoot tr {
         gap: 0px;
     }
 }
+.page-title{
+    display: flex;
+    align-items: center;
+    justify-content: start;;
+    font-size: 1.875rem/* 30px */;
+    line-height: 2.25rem/* 36px */;
+}
+/* Classe para o ícone em tema claro */
+.icon-light::before {
+    content: url('../images/lm_icon.svg');
+    margin-right: 0.5rem;
+  }
+  
+  /* Classe para o ícone em tema escuro */
+  .icon-dark::before {
+    content: url('../images/lm_icon_dark.svg');
+    margin-right: 0.5rem;
+  }
