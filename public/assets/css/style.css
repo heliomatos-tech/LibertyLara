@@ -42,7 +42,10 @@
     font-weight: 700;
 }
 
-
+[x-cloak] {
+    display: none !important;
+  }
+  
 *,
 ::before,
 ::after {

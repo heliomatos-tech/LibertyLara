@@ -9,34 +9,16 @@
         <div class="clearfix"></div>
         <div class="flex flex-wrap ">
             <div class="flex justify-between gap-5 mb-4">
-                <button
-                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
-                    id="btn-form-destinatario" x-on:click="modalHandler(true)">
-                    Destinatário
-                </button>
-                <button
-                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
-                    id="btn-form-faturamento">
-                    Pagamento
-                </button>
-                <button
-                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
-                    id="btn-form-impostos">
-                    Impostos e Retenções
-                </button>
-                <button
-                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
-                    id="btn-form-transporte">
-                    Frete/Transporte
-                </button>
-                <button
-                    class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3"
-                    id="btn-form-documentos">
-                    Documentos Referenciados
-                </button>
+                <x-nfe.destinatario />
+                <x-nfe.pagamento />
+                <x-nfe.impostos-retencoes />
+                <x-nfe.transporte />
+                <x-nfe.documentos />
+
+
             </div>
             <div id="dados-secundarios" class="none">
-                <x-nfe-destinatario />
+                {{-- <x-nfe-destinatario /> --}}
                 <!--{tpl_box_nfe_faturamento}-->
                 <!--{tpl_box_nfe_transporte}-->
                 <!--{tpl_box_nfe_impostos}-->
@@ -260,10 +242,7 @@
                         class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required form-textarea !h-[12rem]"
                         rows="4" id="ds_fisco">
                 </textarea>
-                    <button
-                        class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-gray-700 !py-1 !px-3 mt-2 self-end"
-                        id="btn-obs-fisco">Observações ao Fisco
-                    </button>
+                    <x-nfe.informacoes-fisco />
                 </div>
             </div>
         </div>
