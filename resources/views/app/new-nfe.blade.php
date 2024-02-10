@@ -73,59 +73,81 @@
                     </div>
                 </div>
             </div>
-            <div id="produtos_nfe" class="w-full mb-5" style="display: none;">
-                <div id="produtos_nfe" class="sm:w-full pr-4 pl-4">
+            <div id="produtos_nfe" class="w-full mb-5" style="ddisplay: none;">
+                <div id="produtos_nfe" class="sm:w-full">
                     <div class="x_title">
-                        <span class="h5 class="text-base text-black dark:text-white/80 mb-4"">Produtos e Serviços</span>
-                        <div class="clearfix"></div>
+                        <span class="h5 text-base font-semibold text-black dark:text-white/80 mb-4">
+                            Produtos e Serviços
+                        </span>
                     </div>
 
-                    <div data-id="dados_produto_servico" class="flex flex-wrap ">
-                        <div class="md:w-2/5 pr-4 pl-4 float-left mb-4">
-                            <label for="descricao_prod"
-                                class="text-base text-black dark:text-white/80 mb-4">Descrição:</label>
-                            <div class="relative flex items-stretch w-full">
+                    <div data-id="dados_produto_servico" class="flex flex-wrap gap-4">
+
+                        <div class="flex flex-row w-full gap-5 mb-4">
+
+
+                            <div class="md:w-1/2">
+                                <label for="descricao_prod"
+                                    class="text-base text-black dark:text-white/80 mb-4">Descrição:</label>
+                                <div class="relative flex w-full">
+                                    <input type="text"
+                                        class="w-full py-1 px-2 mb-1  leading-normal xbg-white  rounded rounded-r-none no-required form-input"
+                                        id="descricao_prod">
+
+                                    <button id="btn-item-clear"
+                                        class="z-[2] inline-block rounded-r rounded-l-none text-2xl px-2 mb-1 text-red-600 border border-l-0 border-dark dark:border-gray-600 dark:bg-black hover:bg-red-600 hover:text-white/80 dark:hover:bg-red-600 dark:hover:text-white/80"
+                                        title="Limpar item">
+                                        <i class="ri-close-line"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="md:w-1/7">
+                                <label for="preco_prod" class="text-base text-black dark:text-white/80 mb-4">Preço
+                                    Unit:</label>
+                                <input type="text" class="leading-normal rounded no-required float_point form-input"
+                                    id="preco_prod" value="" disabled>
+                            </div>
+
+                            <div class="md:w-1/4">
+                                <label for="qtd_prod" class="text-base text-black dark:text-white/80 mb-4">Qtde:</label>
                                 <input type="text"
-                                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required form-input"
-                                    id="descricao_prod">
-                                <span class="input-group-append">
-                                    <button type="button" id="btn-item-clear"
-                                        class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-red-600 border-red-600 hover:bg-red-600 hover:text-white bg-white hover:bg-red-700"
-                                        data-toggle="tooltip" title="Limpar item"><span class="fa fa-times"></span></button>
-                                </span>
+                                    class="block leading-normal rounded no-required float_point form-input" id="qtd_prod"
+                                    value="1" disabled>
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex self-end justify-end w-full mb-4">
+
+
+                            <div class="flex md:w-2/5 justify-end gap-4">
+
+                                <div class="w-4/6">
+
+                                    <label for="total_prod"
+                                        class="text-base text-black dark:text-white/80 mb-4">Total:</label>
+                                    <input type="text" class="leading-normal rounded no-required form-input"
+                                        id="total_prod" value="" dir="rtl" disabled readonly="readonly">
+                                </div>
+
+
+                                <div class="flex items-end justify-center">
+
+                                    <button id="btn-add-item"
+                                        class="text-base leading-normal no-underline h-[3rem] text-gray-600 dark:text-white/80  border  py-2 px-6 hover:bg-teal-700 hover:text-white/80 !border-teal-700 cursor-pointer"
+                                        disabled="disabled"><i class="ri-add-fill mr-2"></i>Incluir
+                                    </button>
+                                </div>
+
+
                             </div>
                         </div>
 
-
-                        <div class="md:w-1/5 pr-4 pl-4 float-left mb-4">
-                            <label for="preco_prod" class="text-base text-black dark:text-white/80 mb-4">Preço
-                                Unit:</label>
-                            <input type="text"
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required float_point form-input"
-                                id="preco_prod" value="" disabled>
-                        </div>
-                        <!--  </div> -->
-                        <div class="md:w-1/5 pr-4 pl-4 float-left mb-4">
-                            <label for="qtd_prod" class="text-base text-black dark:text-white/80 mb-4">Qtde:</label>
-                            <input type="text"
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required float_point form-input"
-                                id="qtd_prod" value="1" disabled>
-                        </div>
-
-                        <div class="md:w-1/5 pr-4 pl-4 float-left mb-4">
-                            <label for="total_prod" class="text-base text-black dark:text-white/80 mb-4">Total:</label>
-                            <input type="text"
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required form-input"
-                                id="total_prod" value="" dir="rtl" disabled readonly="readonly">
-                        </div>
-                        <div class="mb-4 flex items-end flex-col">
-                            <div class="mt-auto mb-1">
-                                <button id="btn-add-item"
-                                    class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-teal-500 border-teal-500 hover:bg-teal-500 hover:text-white bg-white hover:bg-teal-600 mb-4"
-                                    disabled="disabled"><span class="fa fa-plus mr-2"></span>Incluir</button>
-                            </div>
-                        </div>
                     </div>
+
                     <table id="itens-nfe" class="w-full max-w-full mb-4 bg-transparent table-striped dt-responsive nowrap"
                         width="100%" cellspacing="0">
                         <colgroup>
@@ -137,7 +159,7 @@
                             <col style="width:15%">
                         </colgroup>
                         <thead>
-                            <tr>
+                            <tr class="py-0">
                                 <th class="text-left">Codigo</th>
                                 <th class="text-left">Descrição</th>
                                 <th class="text-right">Qtd</th>
@@ -151,73 +173,49 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="flex flex-wrap  md:w-full pr-4 pl-4">
-                    <div class="md:w-1/5 pr-4 pl-4">
-                        <label>Frete</label>
-                        <div class="relative flex items-stretch w-full mb-4">
-                            <input
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                type="text" id="vl_frete" name="vl_frete" data-decimals="2" value="" />
-                            <span class="input-group-append">
-                                <button type="button"
-                                    class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700 btn-rateio"
-                                    data-toggle="tooltip" title="Ratear Frete" data-target="vl_frete">
-                                    <span class="fa fa-calculator"></span>
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="md:w-1/5 pr-4 pl-4">
-                        <label>Seguro</label>
-                        <div class="relative flex items-stretch w-full mb-4">
-                            <input
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                type="text" id="vl_seguro" name="vl_seguro" data-decimals="2" value="" />
-                            <span class="input-group-append">
-                                <button type="button"
-                                    class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700 btn-rateio"
-                                    data-toggle="tooltip" title="Ratear Seguro" data-target="vl_seguro"><span
-                                        class="fa fa-calculator"></span></button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="md:w-1/5 pr-4 pl-4">
-                        <label>Outras</label>
-                        <div class="relative flex items-stretch w-full mb-4">
-                            <input
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                type="text" id="vl_outras" name="vl_outras" data-decimals="2" value="" />
-                            <span class="input-group-append">
-                                <button type="button"
-                                    class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700 btn-rateio"
-                                    data-toggle="tooltip" title="Ratear Outras" data-target="vl_outras"><span
-                                        class="fa fa-calculator"></span></button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="md:w-1/5 pr-4 pl-4">
-                        <label>Desconto</label>
-                        <div class="relative flex items-stretch w-full mb-4">
-                            <input
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                type="text" id="vl_desconto" name="vl_desconto" data-decimals="2" value="" />
-                            <span class="input-group-append">
-                                <button type="button"
-                                    class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white btn-rateio"
-                                    data-toggle="tooltip" title="Ratear Desconto" data-target="vl_desconto"><span
-                                        class="fa fa-calculator"></span></button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="md:w-1/3 pr-4 pl-4">
-                        <div class="md:w-1/2 pr-4 pl-4 float-right">
-                            <label>Total da Nota</label>
-                            <div class="mb-4">
+                <div class="flex flex-wrap  md:w-full">
+                    <div class="flex gap-5 md:w-4/5">
+                        <div class="md:w-1/5">
+                            <label class="text-base text-black dark:text-white/80 mb-4">Frete</label>
+                            <div class="relative flex items-stretch w-full mb-4">
                                 <input
-                                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded money font-bold no-required"
-                                    type="text" dir="rtl" id="vl_total" name="vl_total" value=""
-                                    readonly />
+                                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
+                                    type="text" id="vl_frete" name="vl_frete" data-decimals="2" value="" />
                             </div>
+                        </div>
+                        <div class="md:w-1/5">
+                            <label class="text-base text-black dark:text-white/80 mb-4">Seguro</label>
+                            <div class="relative flex items-stretch w-full mb-4">
+                                <input
+                                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
+                                    type="text" id="vl_seguro" name="vl_seguro" data-decimals="2" value="" />
+                            </div>
+                        </div>
+                        <div class="md:w-1/5">
+                            <label class="text-base text-black dark:text-white/80 mb-4">Outras</label>
+                            <div class="relative flex items-stretch w-full mb-4">
+                                <input
+                                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
+                                    type="text" id="vl_outras" name="vl_outras" data-decimals="2" value="" />
+                            </div>
+                        </div>
+                        <div class="md:w-1/5">
+                            <label class="text-base text-black dark:text-white/80 mb-4">Desconto</label>
+                            <div class="relative flex items-stretch w-full mb-4">
+                                <input
+                                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
+                                    type="text" id="vl_desconto" name="vl_desconto" data-decimals="2"
+                                    value="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/5 justify-end">
+                        <label class="text-base text-black dark:text-white/80 mb-4">Total da Nota</label>
+                        <div class="mb-4">
+                            <input
+                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
+                                type="text" dir="rtl" id="vl_total" name="vl_total" value="" readonly />
                         </div>
                     </div>
 

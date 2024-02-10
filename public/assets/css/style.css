@@ -47,7 +47,7 @@
   }
   
 *,
-::before,
+::before, 
 ::after {
     box-sizing: border-box;
     /* 1 */
@@ -55,9 +55,9 @@
     /* 2 */
     border-style: solid;
     /* 2 */
-    border-color: #e5e7eb;
+    border-color: none !important;
     /* 2 */
-}
+ }
 
 ::before,
 ::after {
@@ -1043,6 +1043,11 @@ button:focus-visible {
     top: 1rem;
     z-index: 10;
     border-radius: 0.25rem;
+}
+
+
+:is(.dark .border-dark) {
+    border-color: rgb(52, 51, 49);
 }
 
 @media (max-width: 1024px) {

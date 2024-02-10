@@ -32,7 +32,7 @@
                     <div class="md:w-1/2 pr-4 pl-4 mb-4">
                         <label for="dest_nome_view">Tomador:</label>
                         <input type=text readonly
-                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded bg-white no-required"
+                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded bg-white no-required"
                             id="tom_nome_view" placeholder="Nota sem Tomador" value="{%tom_ds_nome%}" />
                     </div>
                 </div>
