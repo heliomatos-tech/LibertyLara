@@ -1,7 +1,7 @@
 <div x-data="{ open: false }">
     <div class="flex justify-end">
         <button @click="open = true"
-            class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-gray-700 !py-1 !px-3 mt-2 self-end">
+            class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-1 !px-3 mt-2 self-end">
             Informações ao Fisco
         </button>
     </div>

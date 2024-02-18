@@ -1,6 +1,6 @@
 <div x-data="{ open: false }">
     <button @click="open = true"
-        class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#27495ed4] !py-2 !px-3">
+        class="border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-2 !px-3">
         Pagamento
     </button>
 

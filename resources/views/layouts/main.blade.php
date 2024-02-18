@@ -5,7 +5,7 @@
 <livewire:main.header />
 {{-- </head> --}}
 
-<body x-data="main"
+<body x-data="main()"
     class="font-sans font-cerebri antialiased relative text-black dark:text-white text-sm font-normal overflow-x-hidden vertical"
     :class="[$store.app.sidebar ? 'toggle-sidebar' : '', $store.app.fullscreen ? 'full' : '', $store.app.mode]">
 
@@ -85,6 +85,7 @@
 
     <!-- Alpine js -->
     <script src="{{ asset('assets/js/alpine-collaspe.min.js') }}"></script>
+    <script src="{{ asset('assets/js/alpine.mask.js') }}"></script>
     <!-- Chart Js -->
     <script src="{{ asset('assets/js/apexcharts.js') }}" defer></script>
     <script src="{{ asset('assets/js/appexchart-app.js') }}" defer></script>

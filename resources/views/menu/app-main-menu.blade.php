@@ -1,8 +1,8 @@
         <!-- Start Sidebar -->
         <nav
-            class="sidebar fixed z-[9999] flex-none w-[360px] border-r dark:bg-darkborder border-black/10 transition-all duration-300 overflow-hidden">
+            class="sidebar fixed z-[5] flex-none w-[360px] border-r dark:bg-darkborder border-black/10 transition-all duration-300 overflow-hidden">
             <div class="bg-white dark:bg-darklight h-full">
-                <div class="p-1">
+                <div class="p-1 bg-white">
                     <a href="/app" class="main-logo w-full">
                         <img src="{{ asset('assets/images/logo-color-300.png') }}" class="dark-logo logo dark:hidden"
                             alt="Logo" />
@@ -87,7 +87,6 @@
                                         @include('menu.app-submenu', [
                                             'options' => [$item],
                                             'module' => $module,
-                                            'navigate' => $navigate,
                                         ])
                                     @endif
                                 </li>

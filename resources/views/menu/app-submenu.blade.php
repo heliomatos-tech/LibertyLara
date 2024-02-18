@@ -15,7 +15,6 @@
             @endphp
 
             @if ($menu_route)
-                {{-- <a href="{{ $menu_route }}" --}}
                 <a href="#" x-on:click.prevent="loadPage('{{ $menu_route }}')"
                     class="inline-flex items-center justify-between w-full px-1 py-2 mt-1 text-gray-900 dark:text-white transition duration-300 ease-in-out hover:font-bold dark & hover:bg-[#3a63a659]">
                     <span class="inline-flex items-center text-base font-light">

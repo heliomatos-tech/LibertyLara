@@ -13,13 +13,10 @@
     <link rel="icon" type="image/png" sizes="128x128" href="{{ asset('assets/images//favicon128.png') }}">
     <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('assets/images//favicon256.png') }}">
 
-    <!-- Fonts -->
-    {{-- <link rel="preconnect" href="https://fonts.bunny.net"> --}}
-    {{-- <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
+    @vite('resources/css/app.css')
+    {{-- <link href="{ { asset('assets/css/app-YsSQecfG.css') }}" rel="stylesheet" /> --}}
     <link href="{{ asset('assets/css/remixicon.css') }}" rel="stylesheet" />
-    <!-- Scripts -->
-    <script src="{{ asset('assets/js/3.3.5.js') }}"></script>
-    <!-- css -->
+    {{-- <script src="{ { asset('assets/js/app-ecWDpuvf.js') }}"></script> --}}
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
     @livewireStyles
 </header>

@@ -7,8 +7,15 @@
         <input type='hidden' class="no-clear hidden" name="guid" value="">
         <input type='hidden' class="no-clear hidden" name="token" value="">
         <div class="clearfix"></div>
-        <div class="flex flex-wrap ">
+        <div class="flex flex-wrap">
             <div class="flex justify-between gap-5 mb-4">
+
+                <button
+                    class="dark border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-2 !px-3 dark:hover:bg-gray-600"
+                    x-on:click="openModal('nfe-destinatario')">
+                    Destinatário
+                </button>
+
                 <x-nfe.destinatario />
                 <x-nfe.pagamento />
                 <x-nfe.impostos-retencoes />
@@ -89,13 +96,13 @@
                             <div class="md:w-1/2">
                                 <label for="descricao_prod"
                                     class="text-base text-black dark:text-white/80 mb-4">Descrição:</label>
-                                <div class="relative flex w-full">
+                                <div class="flex w-full">
                                     <input type="text"
                                         class="w-full py-1 px-2 mb-1  leading-normal xbg-white  rounded rounded-r-none no-required form-input"
                                         id="descricao_prod">
 
                                     <button id="btn-item-clear"
-                                        class="z-[2] inline-block rounded-r rounded-l-none text-2xl px-2 mb-1 text-red-600 border border-l-0 border-dark dark:border-gray-600 dark:bg-black hover:bg-red-600 hover:text-white/80 dark:hover:bg-red-600 dark:hover:text-white/80"
+                                        class="xxz-[2] inline-block rounded-r rounded-l-none text-2xl px-2 mb-1 text-red-600 border border-l-0 border-dark dark:border-gray-600 dark:bg-black hover:bg-red-600 hover:text-white/80 dark:hover:bg-red-600 dark:hover:text-white/80"
                                         title="Limpar item">
                                         <i class="ri-close-line"></i>
                                     </button>
@@ -177,7 +184,7 @@
                     <div class="flex gap-5 md:w-4/5">
                         <div class="md:w-1/5">
                             <label class="text-base text-black dark:text-white/80 mb-4">Frete</label>
-                            <div class="relative flex items-stretch w-full mb-4">
+                            <div class="flex items-stretch w-full mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
                                     type="text" id="vl_frete" name="vl_frete" data-decimals="2" value="" />
@@ -185,7 +192,7 @@
                         </div>
                         <div class="md:w-1/5">
                             <label class="text-base text-black dark:text-white/80 mb-4">Seguro</label>
-                            <div class="relative flex items-stretch w-full mb-4">
+                            <div class="flex items-stretch w-full mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
                                     type="text" id="vl_seguro" name="vl_seguro" data-decimals="2" value="" />
@@ -193,7 +200,7 @@
                         </div>
                         <div class="md:w-1/5">
                             <label class="text-base text-black dark:text-white/80 mb-4">Outras</label>
-                            <div class="relative flex items-stretch w-full mb-4">
+                            <div class="flex items-stretch w-full mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
                                     type="text" id="vl_outras" name="vl_outras" data-decimals="2" value="" />
@@ -201,7 +208,7 @@
                         </div>
                         <div class="md:w-1/5">
                             <label class="text-base text-black dark:text-white/80 mb-4">Desconto</label>
-                            <div class="relative flex items-stretch w-full mb-4">
+                            <div class="flex items-stretch w-full mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
                                     type="text" id="vl_desconto" name="vl_desconto" data-decimals="2"
@@ -247,7 +254,7 @@
         <!-- obs fisco -->
 
 
-        <div id="box-obs-fisco" class="modal opacity-0">
+        <div id="box-obs-fisco" class="modal hidden opacity-0">
             <div class="vertical-alignment-helper">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -322,7 +329,7 @@
         <div class="flex justify-end mt-5">
 
             <a href="app/nfe/gerenciador/{%nu_guid%}/{%nu_token%}"
-                class="flex gap-2 items-center select-none border rounded p-2 text-red-600 border-red-600 hover:text-white dark:bg-black hover:bg-red-700 mr-7">
+                class="flex gap-2 items-center select-none border rounded p-2 px-5 text-red-600 border-red-600 hover:text-white dark:bg-black hover:dark:bg-red-700 mr-7">
 
                 <svg class="feather feather-x" fill="none" height="24" stroke="currentColor"
                     stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
@@ -337,10 +344,8 @@
 
 
             <a id="btn-salva-nfe"
-                class="flex gap-2 items-center select-none border rounded p-2 text-teal-500 border-teal-500 hover:text-white dark:bg-black hover:bg-teal-600 cursor-pointer"
+                class="flex gap-2 items-center select-none border rounded p-2 px-5 text-teal-600 hover:text-white !border-teal-700 dark:bg-black hover:!bg-teal-600 cursor-pointer"
                 name="btn-salva-nfe" value="salvar">
-
-
                 <svg class="feather feather-save" fill="none" height="24" stroke="currentColor" class="w-7 h-7"
                     stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -356,125 +361,126 @@
             </a>
         </div>
 
-    </div>
-    <!--{tpl_box_nfe_edit_item}-->
 
+        <x-nfe.teste-modal />
 
-    <div id="box-localiza-cliente" class="modal opacity-0 hidden">
-        <div class="vertical-alignment-helper">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Localizar Cliente</h5>
-                        <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="modal"
-                            aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+        <!--{tpl_box_nfe_edit_item}-->
 
-
-                    <div class="relative flex-grow max-w-full flex-1 px-4">
-                        <input type="hidden" id="action-load-client" value="">
-                        <label class="label" for="busca-cliente">Nome/Razão Social/CPF/CNPJ</label>
-                        <div class="mb-4 relative flex items-stretch w-full mb-0">
-                            <input id="busca-cliente" name="busca-cliente" type="text"
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
-                                autofocus>
-                            <span class="input-group-append">
-                                <button type="button"
-                                    class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700"
-                                    id="btn-busca-cliente"><span class="fal fa-search"></span></button>
-                            </span>
+        <div id="box-localiza-cliente" class="modal opacity-0 hidden">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Localizar Cliente</h5>
+                            <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="modal"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                    </div>
+
+
+                        <div class="relative flex-grow max-w-full flex-1 px-4">
+                            <input type="hidden" id="action-load-client" value="">
+                            <label class="label" for="busca-cliente">Nome/Razão Social/CPF/CNPJ</label>
+                            <div class="mb-4 relative flex items-stretch w-full mb-0">
+                                <input id="busca-cliente" name="busca-cliente" type="text"
+                                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
+                                    autofocus>
+                                <span class="input-group-append">
+                                    <button type="button"
+                                        class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700"
+                                        id="btn-busca-cliente"><span class="fal fa-search"></span></button>
+                                </span>
+                            </div>
+                        </div>
 
 
 
 
-                    <div class="relative flex-grow max-w-full flex-1 px-4 modal-body overflow-hidden"
-                        style="min-height: 400px;">
-                        <table id="lista_clientes"
-                            class="w-full max-w-full mb-4 bg-transparent table-striped block w-full overflow-auto scrolling-touch border row-hover"
-                            cellspacing="0" style="width:100%">
-                            <colgroup>
-                                <col style="">
-                                <col style="width:10%">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>Nome/Razão Social</th>
-                                    <th class="text-center">CPF/CNPJ</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="md:w-full pr-4 pl-4 modal-footer text-right p-t-20">
-                        <button
-                            class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-green-500 text-white hover:bg-green-600 mr-5"
-                            id="btn-confirma-cliente">Selecionar</button>
-                        <button
-                            class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700"
-                            data-dismiss="modal" id="btn-fechar-clientes">Cancelar</button>
+                        <div class="relative flex-grow max-w-full flex-1 px-4 modal-body overflow-hidden"
+                            style="min-height: 400px;">
+                            <table id="lista_clientes"
+                                class="w-full max-w-full mb-4 bg-transparent table-striped block w-full overflow-auto scrolling-touch border row-hover"
+                                cellspacing="0" style="width:100%">
+                                <colgroup>
+                                    <col style="">
+                                    <col style="width:10%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Nome/Razão Social</th>
+                                        <th class="text-center">CPF/CNPJ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="md:w-full pr-4 pl-4 modal-footer text-right p-t-20">
+                            <button
+                                class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-green-500 text-white hover:bg-green-600 mr-5"
+                                id="btn-confirma-cliente">Selecionar</button>
+                            <button
+                                class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700"
+                                data-dismiss="modal" id="btn-fechar-clientes">Cancelar</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-
-
-
-    <div id="box-localiza-produto" class="modal opacity-0 hidden">
-        <div class="vertical-alignment-helper">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content box-border1 border-theme relative flex-grow max-w-full flex-1 px-4">
-                    <p class="h5">Localizar Produto/Serviço</p>
-                    <div class="flex flex-wrap  sm:w-2/3 pr-4 pl-4 float-left">
-                        <input type="hidden" id="action-load-produto" value="">
-                        <label class="label" for="busca-produto">Descrição</label>
-                        <div class="mb-4 relative flex items-stretch w-full mb-0">
-                            <input id="busca-produto" name="busca-produto" type="text"
-                                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
-                                autofocus>
-                            <span class="input-group-append">
-                                <button type="button"
-                                    class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700"
-                                    id="btn-busca-produto"><span class="fal fa-search"></span></button>
-                            </span>
+        <div id="box-localiza-produto" class="modal opacity-0 hidden">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content box-border1 border-theme relative flex-grow max-w-full flex-1 px-4">
+                        <p class="h5">Localizar Produto/Serviço</p>
+                        <div class="flex flex-wrap  sm:w-2/3 pr-4 pl-4 float-left">
+                            <input type="hidden" id="action-load-produto" value="">
+                            <label class="label" for="busca-produto">Descrição</label>
+                            <div class="mb-4 relative flex items-stretch w-full mb-0">
+                                <input id="busca-produto" name="busca-produto" type="text"
+                                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
+                                    autofocus>
+                                <span class="input-group-append">
+                                    <button type="button"
+                                        class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-white bg-white hover:bg-gray-700"
+                                        id="btn-busca-produto"><span class="fal fa-search"></span></button>
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex flex-wrap  modal-body overflow-hidden" style="min-height: 400px;">
-                        <table id="lista_produtos"
-                            class="w-full max-w-full mb-4 bg-transparent table-striped block w-full overflow-auto scrolling-touch border row-hover"
-                            cellspacing="0" style="width:100%">
-                            <colgroup>
-                                <col style="">
-                                <col style="width:10%">
-                                <col style="width:15%">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>Descrição</th>
-                                    <th class="text-center">Unidade</th>
-                                    <th class="text-right">Preço</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="md:w-full pr-4 pl-4 modal-footer text-right p-t-20">
-                        <button
-                            class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-green-500 text-white hover:bg-green-600 mr-5"
-                            id="btn-confirma-produto">Selecionar</button>
-                        <button
-                            class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700"
-                            data-dismiss="modal" id="btn-fechar-produtos">Cancelar</button>
+                        <div class="flex flex-wrap  modal-body overflow-hidden" style="min-height: 400px;">
+                            <table id="lista_produtos"
+                                class="w-full max-w-full mb-4 bg-transparent table-striped block w-full overflow-auto scrolling-touch border row-hover"
+                                cellspacing="0" style="width:100%">
+                                <colgroup>
+                                    <col style="">
+                                    <col style="width:10%">
+                                    <col style="width:15%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Descrição</th>
+                                        <th class="text-center">Unidade</th>
+                                        <th class="text-right">Preço</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="md:w-full pr-4 pl-4 modal-footer text-right p-t-20">
+                            <button
+                                class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-green-500 text-white hover:bg-green-600 mr-5"
+                                id="btn-confirma-produto">Selecionar</button>
+                            <button
+                                class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700"
+                                data-dismiss="modal" id="btn-fechar-produtos">Cancelar</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
 @endsection

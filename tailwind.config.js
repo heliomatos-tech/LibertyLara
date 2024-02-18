@@ -4,18 +4,23 @@ import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
+    purge: [
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
     ],
-    darkMode: 'class',
+    mode: 'jit', // Adicione esta linha para habilitar o modo JIT
+    darkMode: 'class', // ou 'media' para usar a media query prefers-color-scheme
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+    ],
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
         },
     },
-    plugins: [forms, typography],
+    plugins: [
+        forms, typography
+    ],
 };
