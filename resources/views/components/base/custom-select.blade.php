@@ -1,6 +1,6 @@
 <div x-data="{ open: false, value: '{{ $selectedValue ?? '' }}', selected: '{{ $selectedText ?? '' }}' }" x-on:click.away="open = false" class="relative">
     <div x-on:click="open = !open"
-        class="cursor-pointer w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj no-clear rounded-md shadow-sm">
+        class="flex items-center cursor-pointer w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj no-clear rounded-md shadow-sm">
         <span x-text="selected || 'Selecione...'" class="block truncate text-base"></span>
         <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
             <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0  0  20  20"
