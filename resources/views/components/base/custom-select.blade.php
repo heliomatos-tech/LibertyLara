@@ -1,4 +1,4 @@
-<div x-data="{ open: false, value: '{{ $selectedValue ?? '' }}', selected: '{{ $selectedText ?? '' }}' }" x-on:click.away="open = false" class="relative">
+<div x-cloak x-data="{ open: false, value: '{{ $selectedValue ?? '' }}', selected: '{{ $selectedText ?? '' }}' }" x-on:click.away="open = false" class="relative">
     <div x-on:click="open = !open"
         class="flex items-center cursor-pointer w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj no-clear rounded-md shadow-sm">
         <span x-text="selected || 'Selecione...'" class="block truncate text-base"></span>

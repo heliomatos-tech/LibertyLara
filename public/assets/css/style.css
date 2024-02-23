@@ -42,6 +42,108 @@
     font-weight: 700;
 }
 
+*,
+::before,
+::after {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+}
+
+::backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+}
+
 [x-cloak] {
     display: none !important;
 }
@@ -50,13 +152,9 @@
 ::before,
 ::after {
     box-sizing: border-box;
-    /* 1 */
     border-width: 0;
-    /* 2 */
     border-style: solid;
-    /* 2 */
     border-color: none !important;
-    /* 2 */
 }
 
 ::before,
@@ -72,39 +170,30 @@
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
 */
-
+/* 
 html {
     line-height: 1.5;
-    /* 1 */
     -webkit-text-size-adjust: 100%;
-    /* 2 */
     -moz-tab-size: 4;
-    /* 3 */
     -o-tab-size: 4;
     tab-size: 4;
-    /* 3 */
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
-    /* 4 */
     font-feature-settings: normal;
-    /* 5 */
     font-variation-settings: normal;
-    /* 6 */
-}
+} */
 
 /*
 1. Remove the margin in all browsers.
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
 
-body {
+/* body {
     margin: 0;
-    /* 1 */
     line-height: inherit;
-    /* 2 */
-}
+} */
 
 /*
 1. Add the correct height in Firefox.
@@ -112,29 +201,26 @@ body {
 3. Ensure horizontal rules are visible by default.
 */
 
-hr {
+/* hr {
     height: 0;
-    /* 1 */
     color: inherit;
-    /* 2 */
     border-top-width: 1px;
-    /* 3 */
-}
+} */
 
 /*
 Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
-abbr:where([title]) {
+/* abbr:where([title]) {
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
-}
+} */
 
 /*
 Remove the default font size and weight for headings.
 */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -142,49 +228,47 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: inherit;
-}
+} */
 
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
 */
 
-a {
+/* a {
     color: inherit;
     text-decoration: inherit;
-}
+} */
 
 /*
 Add the correct font weight in Edge and Safari.
 */
 
-b,
+/* b,
 strong {
     font-weight: bolder;
-}
+} */
 
 /*
 1. Use the user's configured `mono` font family by default.
 2. Correct the odd `em` font sizing in all browsers.
 */
 
-code,
+/* code,
 kbd,
 samp,
 pre {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
         "Liberation Mono", "Courier New", monospace;
-    /* 1 */
     font-size: 1em;
-    /* 2 */
-}
+} */
 
 /*
 Add the correct font size in all browsers.
 */
 
-small {
+/* small {
     font-size: 80%;
-}
+} */
 
 /*
 Prevent `sub` and `sup` elements from affecting the line height in all browsers.
@@ -214,11 +298,8 @@ sup {
 
 table {
     text-indent: 0;
-    /* 1 */
     border-color: inherit;
-    /* 2 */
     border-collapse: collapse;
-    /* 3 */
 }
 
 /*
@@ -233,29 +314,22 @@ optgroup,
 select,
 textarea {
     font-family: inherit;
-    /* 1 */
     font-size: 100%;
-    /* 1 */
     font-weight: inherit;
-    /* 1 */
     line-height: inherit;
-    /* 1 */
     color: inherit;
-    /* 1 */
     margin: 0;
-    /* 2 */
     padding: 0;
-    /* 3 */
 }
 
 /*
 Remove the inheritance of text transform in Edge and Firefox.
 */
 
-button,
-select {
-    text-transform: none;
-}
+/* button,
+    select {
+        text-transform: none;
+    } */
 
 /*
 1. Correct the inability to style clickable types in iOS and Safari.
@@ -267,11 +341,8 @@ button,
 [type="reset"],
 [type="submit"] {
     -webkit-appearance: button;
-    /* 1 */
     background-color: transparent;
-    /* 2 */
     background-image: none;
-    /* 2 */
 }
 
 /*
@@ -294,50 +365,46 @@ Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/
 Add the correct vertical alignment in Chrome and Firefox.
 */
 
-progress {
-    vertical-align: baseline;
-}
+/* progress {
+        vertical-align: baseline;
+    } */
 
 /*
 Correct the cursor style of increment and decrement buttons in Safari.
 */
 
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-    height: auto;
-}
+/* ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+        height: auto;
+    } */
 
 /*
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
 
-[type="search"] {
-    -webkit-appearance: textfield;
-    /* 1 */
-    outline-offset: -2px;
-    /* 2 */
-}
+/* [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+    } */
 
 /*
 Remove the inner padding in Chrome and Safari on macOS.
 */
 
-::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
+/* ::-webkit-search-decoration {
+        -webkit-appearance: none;
+    } */
 
 /*
 1. Correct the inability to style clickable types in iOS and Safari.
 2. Change font properties to `inherit` in Safari.
 */
 
-::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    /* 1 */
-    font: inherit;
-    /* 2 */
-}
+/* ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+    } */
 
 /*
 Add the correct display in Chrome and Safari.
@@ -351,7 +418,7 @@ summary {
 Removes the default spacing and border for appropriate elements.
 */
 
-blockquote,
+/* blockquote,
 dl,
 dd,
 h1,
@@ -365,24 +432,24 @@ figure,
 p,
 pre {
     margin: 0;
-}
+} */
 
-fieldset {
+/* fieldset {
     margin: 0;
     padding: 0;
-}
+} */
 
-legend {
+/* legend {
     padding: 0;
-}
+} */
 
-ol,
+/* ol,
 ul,
 menu {
     list-style: none;
     margin: 0;
     padding: 0;
-}
+} */
 
 /*
 Prevent resizing textareas horizontally by default.
@@ -397,39 +464,23 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder,
+/* input::-moz-placeholder,
 textarea::-moz-placeholder {
     opacity: 1;
-    /* 1 */
     color: #9ca3af;
-    /* 2 */
-}
+} */
 
-input::placeholder,
+/* input::placeholder,
 textarea::placeholder {
     opacity: 1;
-    /* 1 */
     color: #9ca3af;
-    /* 2 */
-}
+} */
 
-/* Estilizando as opções */
-select option {
-    background-color: #fff;
-    /* Cor de fundo */
-    color: #000;
-    /* Cor do texto */
-    padding: 8px 12px;
-    /* Espaçamento interno */
-    border-bottom: 1px solid #ddd;
-    /* Borda inferior */
-}
 
 /* Estilizando a opção selecionada */
-select option:checked {
+/* select option:checked {
     background-color: #f0f0f0;
-    /* Cor de fundo quando selecionado */
-}
+} */
 
 .p-form-input {
     padding: 0.6rem 0.4rem !important;
@@ -443,10 +494,10 @@ select option:checked {
 Set the default cursor for buttons.
 */
 
-button,
+/* button,
 [role="button"] {
     cursor: pointer;
-}
+} */
 
 /*
 Make sure disabled buttons don't get the pointer cursor.
@@ -510,8 +561,6 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* background-color: #fff; */
-    /* border-color: #6b7280; */
     border-width: 1px;
     border-radius: 0px;
     padding-top: 0.5rem;
@@ -541,8 +590,6 @@ select:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
     --tw-ring-inset: var(--tw-empty,
-            /*!*/
-            /*!*/
         );
     --tw-ring-offset-width: 0px;
     --tw-ring-offset-color: #fff;
@@ -554,17 +601,14 @@ select:focus {
     border-color: #2563eb;
 }
 
+input::placeholder,
+textarea::placeholder,
 input::-moz-placeholder,
 textarea::-moz-placeholder {
     color: #6b7280;
     opacity: 1;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: #6b7280;
-    opacity: 1;
-}
 
 ::-webkit-datetime-edit-fields-wrapper {
     padding: 0;
@@ -716,107 +760,7 @@ select {
     scrollbar-width: initial;
 }
 
-*,
-::before,
-::after {
-    --tw-border-spacing-x: 0;
-    --tw-border-spacing-y: 0;
-    --tw-translate-x: 0;
-    --tw-translate-y: 0;
-    --tw-rotate: 0;
-    --tw-skew-x: 0;
-    --tw-skew-y: 0;
-    --tw-scale-x: 1;
-    --tw-scale-y: 1;
-    --tw-pan-x: ;
-    --tw-pan-y: ;
-    --tw-pinch-zoom: ;
-    --tw-scroll-snap-strictness: proximity;
-    --tw-gradient-from-position: ;
-    --tw-gradient-via-position: ;
-    --tw-gradient-to-position: ;
-    --tw-ordinal: ;
-    --tw-slashed-zero: ;
-    --tw-numeric-figure: ;
-    --tw-numeric-spacing: ;
-    --tw-numeric-fraction: ;
-    --tw-ring-inset: ;
-    --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: #fff;
-    --tw-ring-color: rgb(59 130 246 / 0.5);
-    --tw-ring-offset-shadow: 0 0 #0000;
-    --tw-ring-shadow: 0 0 #0000;
-    --tw-shadow: 0 0 #0000;
-    --tw-shadow-colored: 0 0 #0000;
-    --tw-blur: ;
-    --tw-brightness: ;
-    --tw-contrast: ;
-    --tw-grayscale: ;
-    --tw-hue-rotate: ;
-    --tw-invert: ;
-    --tw-saturate: ;
-    --tw-sepia: ;
-    --tw-drop-shadow: ;
-    --tw-backdrop-blur: ;
-    --tw-backdrop-brightness: ;
-    --tw-backdrop-contrast: ;
-    --tw-backdrop-grayscale: ;
-    --tw-backdrop-hue-rotate: ;
-    --tw-backdrop-invert: ;
-    --tw-backdrop-opacity: ;
-    --tw-backdrop-saturate: ;
-    --tw-backdrop-sepia: ;
-}
 
-::backdrop {
-    --tw-border-spacing-x: 0;
-    --tw-border-spacing-y: 0;
-    --tw-translate-x: 0;
-    --tw-translate-y: 0;
-    --tw-rotate: 0;
-    --tw-skew-x: 0;
-    --tw-skew-y: 0;
-    --tw-scale-x: 1;
-    --tw-scale-y: 1;
-    --tw-pan-x: ;
-    --tw-pan-y: ;
-    --tw-pinch-zoom: ;
-    --tw-scroll-snap-strictness: proximity;
-    --tw-gradient-from-position: ;
-    --tw-gradient-via-position: ;
-    --tw-gradient-to-position: ;
-    --tw-ordinal: ;
-    --tw-slashed-zero: ;
-    --tw-numeric-figure: ;
-    --tw-numeric-spacing: ;
-    --tw-numeric-fraction: ;
-    --tw-ring-inset: ;
-    --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: #fff;
-    --tw-ring-color: rgb(59 130 246 / 0.5);
-    --tw-ring-offset-shadow: 0 0 #0000;
-    --tw-ring-shadow: 0 0 #0000;
-    --tw-shadow: 0 0 #0000;
-    --tw-shadow-colored: 0 0 #0000;
-    --tw-blur: ;
-    --tw-brightness: ;
-    --tw-contrast: ;
-    --tw-grayscale: ;
-    --tw-hue-rotate: ;
-    --tw-invert: ;
-    --tw-saturate: ;
-    --tw-sepia: ;
-    --tw-drop-shadow: ;
-    --tw-backdrop-blur: ;
-    --tw-backdrop-brightness: ;
-    --tw-backdrop-contrast: ;
-    --tw-backdrop-grayscale: ;
-    --tw-backdrop-hue-rotate: ;
-    --tw-backdrop-invert: ;
-    --tw-backdrop-opacity: ;
-    --tw-backdrop-saturate: ;
-    --tw-backdrop-sepia: ;
-}
 
 /* 1. BASIC */
 
@@ -824,9 +768,6 @@ html {
     scroll-behavior: smooth;
 }
 
-[x-cloak] {
-    display: none !important;
-}
 
 body {
     --tw-bg-opacity: 1;
@@ -873,7 +814,6 @@ button:focus-visible {
     padding-bottom: 0.625rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    text-transform: capitalize;
 }
 
 /* 3.SCROLLBAR */
@@ -1211,15 +1151,15 @@ button:focus-visible {
 
 /* 6. DROPDOWN */
 
-.\!dropdown {
+/* .\!dropdown {
     position: relative;
-}
+} */
 
 .dropdown {
     position: relative;
 }
 
-.\!dropdown ul {
+/* .\!dropdown ul {
     position: absolute;
     z-index: 50;
     margin-top: 0.125rem;
@@ -1232,18 +1172,18 @@ button:focus-visible {
     padding: 0px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-}
+} */
 
-:is(.dark .\!dropdown ul) {
+/* :is(.dark .\!dropdown ul) {
     --tw-border-opacity: 1;
     border-color: rgb(52 51 49 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(31 31 31 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(118 114 115 / var(--tw-text-opacity));
-}
+} */
 
-.dropdown ul {
+/* .dropdown ul {
     position: absolute;
     z-index: 50;
     margin-top: 0.125rem;
@@ -1256,18 +1196,18 @@ button:focus-visible {
     padding: 0px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-}
+} */
 
-:is(.dark .dropdown ul) {
+/* :is(.dark .dropdown ul) {
     --tw-border-opacity: 1;
     border-color: rgb(52 51 49 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(31 31 31 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(118 114 115 / var(--tw-text-opacity));
-}
+} */
 
-.\!dropdown ul li>a,
+/* .\!dropdown ul li>a,
 .\!dropdown ul li>button,
 .\!dropdown ul li>div {
     display: flex;
@@ -1276,25 +1216,25 @@ button:focus-visible {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-}
+} */
 
-.\!dropdown ul li>a:hover,
+/* .\!dropdown ul li>a:hover,
 .\!dropdown ul li>button:hover,
 .\!dropdown ul li>div:hover {
     background-color: rgb(50 58 70 / 0.05);
     --tw-text-opacity: 1;
     color: rgb(50 58 70 / var(--tw-text-opacity));
-}
+} */
 
-:is(.dark .\!dropdown ul li > a:hover),
+/* :is(.dark .\!dropdown ul li > a:hover),
 :is(.dark .\!dropdown ul li > button:hover),
 :is(.dark .\!dropdown ul li > div:hover) {
     background-color: rgb(255 255 255 / 0.05);
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
-}
+} */
 
-.dropdown ul li>a,
+/* .dropdown ul li>a,
 .dropdown ul li>button,
 .dropdown ul li>div {
     display: flex;
@@ -1303,25 +1243,25 @@ button:focus-visible {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-}
+} */
 
-.dropdown ul li>a:hover,
+/* .dropdown ul li>a:hover,
 .dropdown ul li>button:hover,
 .dropdown ul li>div:hover {
     background-color: rgb(50 58 70 / 0.05);
     --tw-text-opacity: 1;
     color: rgb(50 58 70 / var(--tw-text-opacity));
-}
+} */
 
-:is(.dark .dropdown ul li > a:hover),
+/* :is(.dark .dropdown ul li > a:hover),
 :is(.dark .dropdown ul li > button:hover),
 :is(.dark .dropdown ul li > div:hover) {
     background-color: rgb(255 255 255 / 0.05);
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
-}
+} */
 
-.\!dropdown ul li>a,
+/* .\!dropdown ul li>a,
 .\!dropdown ul li>button,
 .\!dropdown ul li>div {
     display: flex;
@@ -1330,25 +1270,25 @@ button:focus-visible {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-}
+} */
 
-.\!dropdown ul li>a:hover,
+/* .\!dropdown ul li>a:hover,
 .\!dropdown ul li>button:hover,
 .\!dropdown ul li>div:hover {
     background-color: rgb(50 58 70 / 0.05);
     --tw-text-opacity: 1;
     color: rgb(50 58 70 / var(--tw-text-opacity));
-}
+} */
 
-:is(.dark .\!dropdown ul li > a:hover),
+/* :is(.dark .\!dropdown ul li > a:hover),
 :is(.dark .\!dropdown ul li > button:hover),
 :is(.dark .\!dropdown ul li > div:hover) {
     background-color: rgb(255 255 255 / 0.05);
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
-}
+} */
 
-.\!dropdown ul li>a,
+/* .\!dropdown ul li>a,
 .\!dropdown ul li>button,
 .\!dropdown ul li>div {
     display: flex;
@@ -1357,23 +1297,47 @@ button:focus-visible {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-}
+} */
 
-.\!dropdown ul li>a:hover,
+/* .\!dropdown ul li>a:hover,
 .\!dropdown ul li>button:hover,
 .\!dropdown ul li>div:hover {
     background-color: rgb(50 58 70 / 0.05);
     --tw-text-opacity: 1;
     color: rgb(50 58 70 / var(--tw-text-opacity));
-}
+} */
 
-:is(.dark .\!dropdown ul li > a:hover),
+/* :is(.dark .\!dropdown ul li > a:hover),
 :is(.dark .\!dropdown ul li > button:hover),
 :is(.dark .\!dropdown ul li > div:hover) {
     background-color: rgb(255 255 255 / 0.05);
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+} */
+
+li:hover,
+li>a:hover {
+    background-color: rgba(212, 212, 212, 0.89);
+    --tw-text-opacity: 1;
+    color: #000;
 }
+
+:is(.dark li:hover),
+:is(.dark li > a:hover) {
+    background-color: rgb(255 255 255 / 0.05);
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:is(.dark .btn-default:hover) {
+    --tw-text-opacity: 1;
+    background-color: rgba(130, 125, 125, 0.47);
+    color: #fff;
+}
+
+
+
+
 
 /* 7. PROFILE DROPDOWN */
 
@@ -1597,7 +1561,8 @@ table.table-borderless tfoot tr {
 .form-select:focus,
 .form-multiselect:focus {
     --tw-border-opacity: 1;
-    border-color: #cfcfcf;
+    --tw-ring-color: #2f2f2f;
+    border-color: #939393;
     --tw-shadow: 0 0 #0000 !important;
     --tw-shadow-colored: 0 0 #0000 !important;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
@@ -1606,6 +1571,7 @@ table.table-borderless tfoot tr {
     --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
         var(--tw-shadow, 0 0 #0000);
+    --tw-ring-offset-color: #939393;
 }
 
 :is(.dark .form-input),
@@ -1890,6 +1856,7 @@ table.table-borderless tfoot tr {
     pointer-events: none;
 }
 
+/* 
 .fixed {
     position: fixed;
 }
@@ -2689,7 +2656,7 @@ table.table-borderless tfoot tr {
 
 .shrink-0 {
     flex-shrink: 0;
-}
+} */
 
 .caption-top {
     caption-side: top;
@@ -2789,6 +2756,7 @@ table.table-borderless tfoot tr {
     grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+/* 
 .flex-row {
     flex-direction: row;
 }
@@ -2872,7 +2840,7 @@ table.table-borderless tfoot tr {
 
 .gap-y-3 {
     row-gap: 0.75rem;
-}
+} */
 
 .-space-x-1> :not([hidden])~ :not([hidden]) {
     --tw-space-x-reverse: 0;
@@ -2980,7 +2948,7 @@ table.table-borderless tfoot tr {
     border-color: rgb(50 58 70 / 0.1);
 }
 
-.place-self-start {
+/* .place-self-start {
     place-self: start;
 }
 
@@ -3992,9 +3960,9 @@ table.table-borderless tfoot tr {
 
 .opacity-60 {
     opacity: 0.6;
-}
+} */
 
-.shadow {
+/* .shadow {
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
         0 1px 2px -1px var(--tw-shadow-color);
@@ -4097,6 +4065,7 @@ table.table-borderless tfoot tr {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
 }
+ */
 
 .transition-all {
     transition-property: all;
@@ -4206,6 +4175,7 @@ table.table-borderless tfoot tr {
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+/* 
 .peer:checked~.peer-checked\:text-black {
     --tw-text-opacity: 1;
     color: rgb(50 58 70 / var(--tw-text-opacity));
@@ -4239,206 +4209,207 @@ table.table-borderless tfoot tr {
 .peer:checked~.peer-checked\:text-warning {
     --tw-text-opacity: 1;
     color: rgb(255 199 0 / var(--tw-text-opacity));
-}
+} */
 
-.hover\:rotate-180:hover {
+/* .hover\:rotate-180:hover {
     --tw-rotate: 180deg;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
+} */
 
-.hover\:border-black\/\[0\.85\]:hover {
+/* .hover\:border-black\/\[0\.85\]:hover {
     border-color: rgb(50 58 70 / 0.85);
-}
+} */
 
-.hover\:border-danger\/\[0\.85\]:hover {
+/* .hover\:border-danger\/\[0\.85\]:hover {
     border-color: rgb(241 65 108 / 0.85);
-}
+} */
 
-.hover\:border-info\/\[0\.85\]:hover {
+/* .hover\:border-info\/\[0\.85\]:hover {
     border-color: rgb(0 158 247 / 0.85);
-}
+} */
 
-.hover\:border-light\/\[0\.85\]:hover {
+/* .hover\:border-light\/\[0\.85\]:hover {
     border-color: rgb(226 230 235 / 0.85);
-}
+} */
 
-.hover\:border-muted\/\[0\.85\]:hover {
+/* .hover\:border-muted\/\[0\.85\]:hover {
     border-color: rgb(148 152 154 / 0.85);
-}
+} */
 
-.hover\:border-purple:hover {
+/* .hover\:border-purple:hover {
     --tw-border-opacity: 1;
     border-color: rgb(106 105 245 / var(--tw-border-opacity));
-}
+} */
 
-.hover\:border-purple\/\[0\.40\]:hover {
+/* .hover\:border-purple\/\[0\.40\]:hover {
     border-color: rgb(106 105 245 / 0.4);
-}
+} */
 
-.hover\:border-purple\/\[0\.85\]:hover {
+/* .hover\:border-purple\/\[0\.85\]:hover {
     border-color: rgb(106 105 245 / 0.85);
-}
+} */
 
-.hover\:border-success\/\[0\.85\]:hover {
+/* .hover\:border-success\/\[0\.85\]:hover {
     border-color: rgb(80 205 137 / 0.85);
-}
+} */
 
-.hover\:border-transparent:hover {
+/* .hover\:border-transparent:hover {
     border-color: transparent;
-}
+} */
 
-.hover\:border-warning\/\[0\.85\]:hover {
+/* .hover\:border-warning\/\[0\.85\]:hover {
     border-color: rgb(255 199 0 / 0.85);
-}
+} */
 
-.hover\:bg-black:hover {
+/* .hover\:bg-black:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(50 58 70 / var(--tw-bg-opacity));
-}
+} */
 
-.hover\:bg-black\/5:hover {
+/* .hover\:bg-black\/5:hover {
     background-color: rgb(50 58 70 / 0.05);
-}
+} */
 
-.hover\:bg-black\/\[0\.85\]:hover {
+/* .hover\:bg-black\/\[0\.85\]:hover {
     background-color: rgb(50 58 70 / 0.85);
-}
+} */
 
-.hover\:bg-danger:hover {
+/* .hover\:bg-danger:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(241 65 108 / var(--tw-bg-opacity));
-}
+} */
 
-.hover\:bg-danger\/\[0\.85\]:hover {
+/* .hover\:bg-danger\/\[0\.85\]:hover {
     background-color: rgb(241 65 108 / 0.85);
-}
+} */
 
-.hover\:bg-info:hover {
+/* .hover\:bg-info:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(0 158 247 / var(--tw-bg-opacity));
-}
+} */
 
-.hover\:bg-info\/\[0\.85\]:hover {
+/* .hover\:bg-info\/\[0\.85\]:hover {
     background-color: rgb(0 158 247 / 0.85);
-}
+} */
 
-.hover\:bg-light:hover {
+/* .hover\:bg-light:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(226 230 235 / var(--tw-bg-opacity));
-}
+} */
 
-.hover\:bg-light\/40:hover {
+/* .hover\:bg-light\/40:hover {
     background-color: rgb(226 230 235 / 0.4);
-}
+} */
 
-.hover\:bg-light\/50:hover {
+/* .hover\:bg-light\/50:hover {
     background-color: rgb(226 230 235 / 0.5);
-}
+} */
 
-.hover\:bg-light\/\[0\.85\]:hover {
+/* .hover\:bg-light\/\[0\.85\]:hover {
     background-color: rgb(226 230 235 / 0.85);
-}
+} */
 
-.hover\:bg-muted:hover {
+/* .hover\:bg-muted:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(148 152 154 / var(--tw-bg-opacity));
-}
+} */
 
-.hover\:bg-muted\/\[0\.85\]:hover {
+/* .hover\:bg-muted\/\[0\.85\]:hover {
     background-color: rgb(148 152 154 / 0.85);
-}
+} */
 
-.hover\:bg-purple:hover {
+/* .hover\:bg-purple:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(106 105 245 / var(--tw-bg-opacity));
-}
+} */
 
-.hover\:bg-purple\/10:hover {
+/* .hover\:bg-purple\/10:hover {
     background-color: rgb(106 105 245 / 0.1);
-}
+} */
 
-.hover\:bg-purple\/\[0\.85\]:hover {
+/* .hover\:bg-purple\/\[0\.85\]:hover {
     background-color: rgb(106 105 245 / 0.85);
-}
+} */
 
-.hover\:bg-success:hover {
+/* .hover\:bg-success:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(80 205 137 / var(--tw-bg-opacity));
-}
+} */
 
-.hover\:bg-success\/\[0\.85\]:hover {
+/* .hover\:bg-success\/\[0\.85\]:hover {
     background-color: rgb(80 205 137 / 0.85);
-}
+} */
 
-.hover\:bg-warning:hover {
+/* .hover\:bg-warning:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(255 199 0 / var(--tw-bg-opacity));
-}
+} */
 
-.hover\:bg-warning\/\[0\.85\]:hover {
+/* .hover\:bg-warning\/\[0\.85\]:hover {
     background-color: rgb(255 199 0 / 0.85);
-}
+} */
 
-.hover\:text-black:hover {
+/* .hover\:text-black:hover {
     --tw-text-opacity: 1;
     color: rgb(50 58 70 / var(--tw-text-opacity));
-}
+} */
 
-.hover\:text-purple:hover {
+/* .hover\:text-purple:hover {
     --tw-text-opacity: 1;
     color: rgb(106 105 245 / var(--tw-text-opacity));
-}
+} */
 
-.hover\:text-white:hover {
+/* .hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
-}
+} */
 
-.hover\:opacity-80:hover {
+/* .hover\:opacity-80:hover {
     opacity: 0.8;
-}
+} */
 
 .active\:bg-light\/50:active {
     background-color: rgb(226 230 235 / 0.5);
 }
 
+/* 
 :is(.dark .dark\:block) {
     display: block;
 }
 
 :is(.dark .dark\:hidden) {
     display: none;
-}
+} */
 
-:is(.dark .dark\:divide-darkborder)> :not([hidden])~ :not([hidden]) {
+/* :is(.dark .dark\:divide-darkborder)> :not([hidden])~ :not([hidden]) {
     --tw-divide-opacity: 1;
     border-color: rgb(52 51 49 / var(--tw-divide-opacity));
-}
+} */
 
-:is(.dark .dark\:border-darkborder) {
+/* :is(.dark .dark\:border-darkborder) {
     --tw-border-opacity: 1;
     border-color: rgb(52 51 49 / var(--tw-border-opacity));
-}
+} */
 
-:is(.dark .dark\:border-darklight) {
+/* :is(.dark .dark\:border-darklight) {
     --tw-border-opacity: 1;
     border-color: rgb(31 31 31 / var(--tw-border-opacity));
-}
+} */
 
-:is(.dark .dark\:border-darkmuted) {
+/* :is(.dark .dark\:border-darkmuted) {
     --tw-border-opacity: 1;
     border-color: rgb(118 114 115 / var(--tw-border-opacity));
-}
+} */
 
-:is(.dark .dark\:border-purple) {
+/* :is(.dark .dark\:border-purple) {
     --tw-border-opacity: 1;
     border-color: rgb(106 105 245 / var(--tw-border-opacity));
-}
+} */
 
-:is(.dark .dark\:border-white) {
+/* :is(.dark .dark\:border-white) {
     --tw-border-opacity: 1;
     border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
+} */
 
 :is(.dark .dark\:bg-dark) {
     --tw-bg-opacity: 1;
@@ -4468,10 +4439,10 @@ table.table-borderless tfoot tr {
     background-color: rgb(118 114 115 / 0.5);
 }
 
-:is(.dark .dark\:bg-purple) {
+/* :is(.dark .dark\:bg-purple) {
     --tw-bg-opacity: 1;
     background-color: rgb(106 105 245 / var(--tw-bg-opacity));
-}
+} */
 
 :is(.dark .dark\:bg-transparent) {
     background-color: transparent;
@@ -4514,12 +4485,12 @@ table.table-borderless tfoot tr {
     color: rgb(148 152 154 / var(--tw-text-opacity));
 }
 
-:is(.dark .dark\:text-purple) {
+/* :is(.dark .dark\:text-purple) {
     --tw-text-opacity: 1;
     color: rgb(106 105 245 / var(--tw-text-opacity));
-}
+} */
 
-:is(.dark .dark\:text-white) {
+/* :is(.dark .dark\:text-white) {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -4557,9 +4528,9 @@ table.table-borderless tfoot tr {
 
 :is(.dark .dark\:placeholder\:text-white\/30)::placeholder {
     color: rgb(255 255 255 / 0.3);
-}
+} */
 
-:is(.dark .dark\:focus\:border-white\/30:focus) {
+/* :is(.dark .dark\:focus\:border-white\/30:focus) {
     border-color: rgb(255 255 255 / 0.3);
 }
 
@@ -4619,7 +4590,7 @@ table.table-borderless tfoot tr {
 :is(.dark .dark\:hover\:text-white:hover) {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
-}
+} */
 
 @media (min-width: 420px) {
     .min-\[420px\]\:block {
@@ -4974,13 +4945,8 @@ End Modal
         display: flex;
         align-items: center;
         justify-content: start;
-        ;
-        font-size: 1.875rem
-            /* 30px */
-        ;
-        line-height: 2.25rem
-            /* 36px */
-        ;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
     }
 
     /* Classe para o ícone em tema claro */

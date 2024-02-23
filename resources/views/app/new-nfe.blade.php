@@ -11,7 +11,7 @@
             <div class="flex justify-between gap-5 mb-4">
 
                 <button
-                    class="dark border rounded dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-2 !px-3 dark:hover:bg-gray-600"
+                    class="dark border rounded btn-default dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-2 !px-3"
                     x-on:click="openModal('nfe-destinatario')">
                     Destinatário
                 </button>
@@ -21,8 +21,6 @@
                 <x-nfe.impostos-retencoes />
                 <x-nfe.transporte />
                 <x-nfe.documentos />
-
-
             </div>
             <div id="dados-secundarios" class="none">
                 {{-- <x-nfe-destinatario /> --}}
