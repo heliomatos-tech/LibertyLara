@@ -14,9 +14,7 @@
     <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('assets/images//favicon256.png') }}">
 
     @vite('resources/css/app.css')
-    {{-- <link href="{ { asset('assets/css/app-YsSQecfG.css') }}" rel="stylesheet" /> --}}
     <link href="{{ asset('assets/css/remixicon.css') }}" rel="stylesheet" />
-    {{-- <script src="{ { asset('assets/js/app-ecWDpuvf.js') }}"></script> --}}
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
     @livewireStyles
 </header>

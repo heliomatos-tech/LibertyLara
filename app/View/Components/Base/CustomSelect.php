@@ -37,9 +37,10 @@ class CustomSelect extends Component
      */
     private function mount(): void
     {
-        foreach ($this->listOptions as $i => $value) {
-            $this->selectedText = ($i == $this->selectedValue) ? $value : $this->selectedText;
-            $this->mounted .= "<li x-on:click=\"selected='{$value}'; open=false\"class=\"px-4 py-2 text-base cursor-pointer hover:bg-[#528b8c38] dark:hover:bg-[#6a80976e] hover:dark:text-slate-50\" :key=\"'{$i}'\">{$value}</li>";
+        foreach ($this->listOptions as $i => $text) {
+            $this->selectedText = ($i == $this->selectedValue) ? $text : $this->selectedText;
+            $this->selectedValue = ($i == $this->selectedValue) ? $i : $this->selectedValue;
+            $this->mounted .= "<li x-on:click=\"selected='{$text}'; value='{$i}'; open=false\" class=\"px-4 py-2 text-base cursor-pointer hover:bg-[#528b8c38] dark:hover:bg-[#6a80976e] hover:dark:text-slate-50\" :key=\"'{$i}'\">{$text}</li>";
         }
     }
 }
