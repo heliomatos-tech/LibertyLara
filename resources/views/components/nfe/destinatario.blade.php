@@ -1,4 +1,4 @@
-<div class="modal" id="nfe-destinatario" x-data="main">
+<div class="modal" id="nfe-destinatario">
     <div class="modal-backdrop">
 
         <div class="modal-content w-2/6 sm:w-3/5 lg:2/5">
@@ -15,8 +15,6 @@
             <div class="modal-body">
 
                 <div class="flex-col w-full">
-
-
 
                     <div class="flex w-full mb-4 gap-5">
 
@@ -51,7 +49,9 @@
                         <div class="sm:w-1/4">
                             <label for="dest_tp_ie_isento_nc"
                                 class="text-base text-black dark:text-white/80 mb-4">Situação:</label>
+
                             <x-nfe.situacao-destinatario />
+
                         </div>
                     </div>
 
@@ -159,7 +159,7 @@
                     x-on:click="closeModal($event)">Cancelar
                 </button>
 
-                <button id="btn-salva-cliente" x-data="processClient"
+                <button id="btn-salva-cliente" xx-data="processClient"
                     class="py-2 px-4 border font-normal leading-normal no-underline text-teal-500 border-teal-500 hover:text-white hover:bg-teal-600"
                     x-on:click="clientConfirm()">
                     Confirmar
@@ -170,10 +170,18 @@
     </div>
 </div>
 <script>
-    const processClient = {
+    processClient = {
         clientConfirm() {
             console.log('Clicou no process confirm');
         },
         // Outras funções...
     };
+
+    handleSituacaoDestinatario = {
+        onChange(_v) {
+            document.querySelector('input[name="tipo_destinatario"]').value = _v;
+            console.log('Alterou o tipo de destinatario para ' + _v);
+
+        }
+    }
 </script>

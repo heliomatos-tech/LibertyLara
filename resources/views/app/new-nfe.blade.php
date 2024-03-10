@@ -22,18 +22,18 @@
                     Pagamento
                 </button>
 
+                <button
+                    class="dark border rounded btn-default dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-2 !px-3"
+                    x-on:click="openModal('nfe-impostos-retencoes')">
+                    Impostos e Retenções
+                </button>
+
                 <x-nfe.destinatario />
                 <x-nfe.pagamento />
                 <x-nfe.impostos-retencoes />
+
                 <x-nfe.transporte />
                 <x-nfe.documentos />
-            </div>
-            <div id="dados-secundarios" class="none">
-                {{-- <x-nfe-destinatario /> --}}
-                <!--{tpl_box_nfe_faturamento}-->
-                <!--{tpl_box_nfe_transporte}-->
-                <!--{tpl_box_nfe_impostos}-->
-                <!--{tpl_box_nfe_documentos_referenciados}-->
             </div>
 
             <div class="w-full">

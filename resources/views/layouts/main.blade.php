@@ -84,12 +84,11 @@
     <!-- End Layout -->
 
     <!-- Alpine js -->
-    <script src="{{ asset('assets/js/alpine-collaspe.min.js') }}"></script>
-    <script src="{{ asset('assets/js/alpine.mask.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/alpine-collaspe.min.js') }}"></script> --}}
     <!-- Chart Js -->
     <script src="{{ asset('assets/js/apexcharts.js') }}" defer></script>
     <script src="{{ asset('assets/js/appexchart-app.js') }}" defer></script>
-    <script src="{{ asset('assets/js/perfect-scrollbar.min.js') }}" defer></script>
+    {{-- <script src="{{ asset('assets/js/perfect-scrollbar.min.js') }}" defer></script> --}}
     <!-- Custom js -->
     <script src="{{ asset('assets/js/custom.js') }}" defer></script>
 

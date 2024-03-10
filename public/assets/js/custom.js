@@ -1,6 +1,5 @@
 document.addEventListener("alpine:init", () => {
     modalZIndex = 100,
-
         Alpine.data("collapse", () => ({
             collapse: false,
             collapseSidebar() {
@@ -51,7 +50,35 @@ document.addEventListener("alpine:init", () => {
             document.getElementById(modalId).style.display = 'none';
 
             this.activeModal = null;
-        }
+        },
+
+        unformatCurrency(v) {
+            if (typeof v !== 'string') {
+                v = v.toString();
+            }
+            var c = v.lastIndexOf(","), p = v.lastIndexOf(".");
+            if (c > p) {
+                r = v.replace('.', '').replace(',', '.');
+            } else {
+                r = v.replace(',', '', v);
+            }
+            return parseFloat(r);
+        },
+
+        formatCurrency(val, _p = 2, _t = '.', _d = ',') {
+            _p = !isNaN(_p = Math.abs(_p)) ? _p : 2;
+            _t = _t || ".";
+            _d = _d || ",";
+            if (typeof val === 'string') {
+                val = this.unformatCurrency(val);
+            }
+            var
+                negative = val < 0 ? "-" : "",
+                i = parseInt(val = Math.abs(+val || 0).toFixed(_p), 10) + "",
+                j = (j = i.length) > 3 ? j % 3 : 0;
+            return negative + (j ? i.substr(0, j) + _t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + _t) + (_p ? _d + Math.abs(val - i).toFixed(_p).slice(2) : "");
+        },
+
 
     }));
 
@@ -152,7 +179,83 @@ document.addEventListener("alpine:init", () => {
         };
         ['blur', 'keyup', 'keypress'].forEach(event => el.addEventListener(event, applyPhoneMask));
     });
+    Alpine.directive('currency', (el, _p = 2) => {
+        _p = parseInt(el.getAttribute('x-currency')) || _p;
+        _p = typeof _p === 'number' && !isNaN(_p) ? _p : 2;
+        function fn(n) {
+            return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+        function fc(value, blur) {
+            if (value === "") {
+                return '';
+            }
+            const originalLen = value.length;
+            const caretPos = document.activeElement.selectionStart;
+            const commaPos = value.indexOf(",");
+            if (commaPos === 0 || value.indexOf(",", commaPos + 1) !== -1) {
+                value = value.replace(/,/g, "");
+            }
+            if (commaPos !== -1 && value.length - commaPos > 3) {
+                value = value.slice(0, commaPos + 3);
+            }
+            if (commaPos !== -1) {
+                let integerPart = value.substring(0, commaPos);
+                let decimalPart = value.substring(commaPos + 1);
+                integerPart = fn(integerPart);
+                if (blur === "blur") {
+                    decimalPart += Array(_p + 1).join("0");
+                }
+                decimalPart = decimalPart.substring(0, _p);
+                value = integerPart + "," + decimalPart;
+            } else {
+                value = fn(value);
+                if (blur === "blur") {
+                    value += "," + Array(_p + 1).join("0");
+                }
+            }
+            return value;
+        }
+        el.addEventListener('blur', () => {
+            el.value = fc(el.value, 'blur');
+        });
+        el.addEventListener('input', () => {
+            el.value = fc(el.value);
+        });
+    });
 
     //Chama o modo dark por padrao, caso não exista
     Alpine.store("app").toggleMode();
 });
+LM = {
+    strToFloat(str) {
+        if (str == '') {
+            return 0;
+        }
+        return converted = parseFloat(str.replace(',', '.'));
+    },
+    unformatCurrency(v) {
+        if (typeof v !== 'string') {
+            v = v.toString();
+        }
+        var c = v.lastIndexOf(","), p = v.lastIndexOf(".");
+        if (c > p) {
+            r = v.replace('.', '').replace(',', '.');
+        } else {
+            r = v.replace(',', '', v);
+        }
+        return parseFloat(r);
+    },
+    formatCurrency(val, _p = 2, _t = '.', _d = ',') {
+        _p = !isNaN(_p = Math.abs(_p)) ? _p : 2;
+        _t = _t || ".";
+        _d = _d || ",";
+        if (typeof val === 'string') {
+            val = this.unformatCurrency(val);
+        }
+        var
+            negative = val < 0 ? "-" : "",
+            i = parseInt(val = Math.abs(+val || 0).toFixed(_p), 10) + "",
+            j = (j = i.length) > 3 ? j % 3 : 0;
+        return negative + (j ? i.substr(0, j) + _t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + _t) + (_p ? _d + Math.abs(val - i).toFixed(_p).slice(2) : "");
+    }
+}

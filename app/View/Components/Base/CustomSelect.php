@@ -15,9 +15,12 @@ class CustomSelect extends Component
      */
     public function __construct(
         public null|array $listOptions,
+        public null|string $name = 'lmdropdown',
         public null|int $selectedValue = null,
         public null|string $selectedText = '',
-        public null|string $mounted = ''
+        public null|string $mounted = '',
+        public null|string $handle = ''
+
     ) {
     }
 
@@ -30,17 +33,14 @@ class CustomSelect extends Component
         return view('components.base.custom-select');
     }
 
-    /**
-     * Monta o Select, selecionando a opção default
-     *
-     * @return void
-     */
     private function mount(): void
     {
         foreach ($this->listOptions as $i => $text) {
             $this->selectedText = ($i == $this->selectedValue) ? $text : $this->selectedText;
             $this->selectedValue = ($i == $this->selectedValue) ? $i : $this->selectedValue;
-            $this->mounted .= "<li x-on:click=\"selected='{$text}'; value='{$i}'; open=false\" class=\"px-4 py-2 text-base cursor-pointer hover:bg-[#528b8c38] dark:hover:bg-[#6a80976e] hover:dark:text-slate-50\" :key=\"'{$i}'\">{$text}</li>";
+            $this->mounted .= "<li x-on:click=\"selected='{$text}'; value='{$i}'; open=false;  onChange('{$i}') \" data-value=\"{$i}\"
+            class=\"px-4 py-2 text-base cursor-pointer hover:bg-[#528b8c38] dark:hover:bg-[#6a80976e] hover:dark:text-slate-50\"
+            :key=\"'{$i}'\">{$text}</li>";
         }
     }
 }

@@ -3,4 +3,4 @@
     '2' => 'Isento',
     '3' => 'Não Contribuinte',
     '4' => 'Consumidor Final',
-]" />
+]" handle="handleSituacaoDestinatario" name="tipo_destinatario" />

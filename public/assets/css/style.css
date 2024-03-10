@@ -1159,6 +1159,10 @@ button:focus-visible {
     position: relative;
 }
 
+:is(.dark .hover:hover) {
+    background-color: rgb(255 255 255 / 0.05);
+}
+
 /* .\!dropdown ul {
     position: absolute;
     z-index: 50;
