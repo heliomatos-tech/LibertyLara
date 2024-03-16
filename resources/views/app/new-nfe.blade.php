@@ -28,10 +28,21 @@
                     Impostos e Retenções
                 </button>
 
+                <button
+                    class="dark border rounded btn-default dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-2 !px-3"
+                    x-on:click="openModal('nfe-transporte')">
+                    Trasnsporte/Frete
+                </button>
+
+                <button
+                    class="dark border rounded btn-default dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-2 !px-3"
+                    x-on:click="openModal('nfe-documentos-referenciados')">
+                    Documentos Referenciados
+                </button>
+
                 <x-nfe.destinatario />
                 <x-nfe.pagamento />
                 <x-nfe.impostos-retencoes />
-
                 <x-nfe.transporte />
                 <x-nfe.documentos />
             </div>

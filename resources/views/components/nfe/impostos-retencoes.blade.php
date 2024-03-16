@@ -13,7 +13,7 @@
                 </button>
             </div>
 
-            <div class="modal-body !min-h-[340px]">
+            <div class="modal-body !min-h-[350px]">
 
                 <div class="flex-col w-full">
 
@@ -24,13 +24,13 @@
 
                         <div class="flex flex-row justify-between mb-5">
                             <div class="flex zflex-start items-start gap-6">
-                                <a class="text-white/80 text-base text-[1.4rem] pb-2 px-2 border-b-2 border-gray-900 hover:border-teal-300"
-                                    :class="{ 'border-teal-300': tab === 'tab-impostos' }" href="#"
+                                <a class="text-black dark:text-white/80 text-base text-[1.4rem] p-2 border-b-2 border-zinc-100 dark:border-gray-900 hover:border-teal-300 hover:cursor-pointer"
+                                    :class="{ 'border-zinc-500 dark:border-teal-300': tab === 'tab-impostos' }"
                                     x-on:click.prevent="tab='tab-impostos'">
                                     Impostos
                                 </a>
-                                <a class="text-white/80 text-base text-[1.4rem] pb-2 px-2 border-b-2 border-gray-900 hover:border-teal-300"
-                                    :class="{ 'border-teal-300': tab === 'tab-retencoes' }" href="#"
+                                <a class="text-black dark:text-white/80 text-base text-[1.4rem] p-2 border-b-2 border-zinc-100 dark:border-gray-900 hover:border-teal-300 hover:cursor-pointer"
+                                    :class="{ 'border-zinc-500 dark:border-teal-300': tab === 'tab-retencoes' }"
                                     x-on:click.prevent="tab='tab-retencoes'">
                                     Retenções
                                 </a>
@@ -256,8 +256,6 @@
 
                                 </div>
                             </div>
-
-
                             <div class="flex flex-1 justify-end">
                                 <button type="button" id="btn-calc-retencoes"
                                     class="text-center border font-normal py-2 px-3 leading-normal no-underline text-teal-500 border-teal-500 hover:text-white bg-white hover:bg-teal-600" />
