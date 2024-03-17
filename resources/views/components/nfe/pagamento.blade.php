@@ -13,7 +13,7 @@
                 </button>
             </div>
 
-            <div class="modal-body !min-h-[595px]">
+            <div class="modal-body !min-h-[575px]">
 
                 <div class="flex-col w-full">
 
@@ -23,7 +23,7 @@
 
 
 
-                        <div class="flex flex-row justify-between">
+                        <div class="flex flex-row justify-between mb-1">
 
 
                             <div class="flex zflex-start items-start gap-6">
@@ -121,26 +121,32 @@
                                                     </td>
                                                 </tr>
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td class="text-right" colspan="2">
-                                                        <label class="mb-0">Total Recebido</label><br />
-                                                        <div>
-                                                            <span class="text-2xl" dir="rtl"
-                                                                id="pagamento-total-recebido">0,00
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right" colspan="2">
-                                                        <label class="margin-bottom">Total da Nota :</label><br>
-                                                        <span>R$</span><span class="h2 text-right" dir="rtl"
-                                                            id="pagamento-total-nota">0,00</span>
-                                                    </td>
-                                                </tr>
-                                            </tfoot>
                                         </table>
+                                        <div class="flex justify-between w-full mt-5">
+                                            <div class="self-start w-1/3">
+                                                <div>
+                                                    <label class="margin-bottom">Total da Nota :</label>
+                                                </div>
+                                                <div>
+
+                                                    <span class="h2 text-right" dir="rtl"
+                                                        id="pagamento-total-nota">0,00
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="self-end w-1/3">
+                                                <div>
+                                                    <label class="flex self-end">Total Recebido:</label>
+                                                </div>
+                                                <div>
+                                                    <span class="flex text-3xl self-end" dir="rtl"
+                                                        id="pagamento-total-recebido">0,00
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
 

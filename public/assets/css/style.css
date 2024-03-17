@@ -1008,7 +1008,7 @@ button:focus-visible {
 
 
 :is(.dark .border-dark) {
-    border-color: rgb(52, 51, 49);
+    border-color: rgb(0, 0, 0);
 }
 
 @media (max-width: 1024px) {
@@ -1549,10 +1549,7 @@ table.table-borderless tfoot tr {
 .form-input::-moz-placeholder,
 .form-textarea::-moz-placeholder,
 .form-select::-moz-placeholder,
-.form-multiselect::-moz-placeholder {
-    color: rgb(50 58 70 / 0.5);
-}
-
+.form-multiselect::-moz-placeholder,
 .form-input::placeholder,
 .form-textarea::placeholder,
 .form-select::placeholder,
@@ -1583,7 +1580,7 @@ table.table-borderless tfoot tr {
 :is(.dark .form-select),
 :is(.dark .form-multiselect) {
     --tw-border-opacity: 1;
-    border-color: rgb(52 51 49 / var(--tw-border-opacity));
+    border-color: rgb(0 0 0 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(21 21 21 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
@@ -4874,7 +4871,7 @@ Modal
     align-items: center;
     justify-content: space-between;
     padding: 1rem .5rem;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(0, 173, 191, 1);
     color: #000000;
     border-bottom: #cfcfcf 1px solid;
     border-radius: .2rem .2rem 0 0;
@@ -4907,7 +4904,7 @@ Modal
     padding: 1.25rem;
     border-top: #cfcfcf 1px solid;
     border-radius: 0 0 .2rem .2rem;
-
+    background-color: rgb(244, 243, 243)
 }
 
 .modal-open {

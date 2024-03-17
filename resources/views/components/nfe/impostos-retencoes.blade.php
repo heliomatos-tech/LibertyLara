@@ -13,7 +13,7 @@
                 </button>
             </div>
 
-            <div class="modal-body !min-h-[350px]">
+            <div class="modal-body !min-h-[380px]">
 
                 <div class="flex-col w-full">
 
@@ -47,7 +47,7 @@
                                     <label>Base do ICMS</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded rtl no-required"
                                             type="text" id="impostos_vl_base_icms" name="impostos_vl_base_icms"
                                             placeholder="0,00" />
                                     </div>
@@ -56,7 +56,7 @@
                                     <label>Valor do ICMS</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_icms" name="impostos_vl_icms"
                                             placeholder="0,00" />
                                     </div>
@@ -69,7 +69,7 @@
                                     <label>Base ICMS-ST</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_base_icmsst" name="impostos_vl_base_icmsst"
                                             placeholder="0,00" />
                                     </div>
@@ -78,7 +78,7 @@
                                     <label>Valor ICMS-ST</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_icmsst" name="impostos_vl_icmsst"
                                             placeholder="0,00" />
                                     </div>
@@ -93,7 +93,7 @@
                                     <label>Base ICMS FCP</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_base_icms_fcp"
                                             name="impostos_vl_base_icms_fcp" placeholder="0,00" />
                                     </div>
@@ -102,7 +102,7 @@
                                     <label>Valor ICMS FCP</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_icms_fcp" name="impostos_vl_icms_fcp"
                                             placeholder="0,00" />
                                     </div>
@@ -111,7 +111,7 @@
                                     <label>Base ICMS-ST FCP</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_base_icmsst_fcp"
                                             name="impostos_vl_base_icmsst_fcp" placeholder="0,00" />
                                     </div>
@@ -120,7 +120,7 @@
                                     <label>Valor ICMS-ST FCP</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_icmsst_fcp" name="impostos_vl_icmsst_fcp"
                                             placeholder="0,00" />
                                     </div>
@@ -133,7 +133,7 @@
                                     <label>Valor IPI</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_ipi" name="impostos_vl_ipi"
                                             placeholder="0,00" />
                                     </div>
@@ -142,7 +142,7 @@
                                     <label>Valor ISS</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_iss" name="impostos_vl_iss"
                                             placeholder="0,00" />
                                     </div>
@@ -151,7 +151,7 @@
                                     <label>Valor dos Serviços</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_servicos" name="impostos_vl_servicos"
                                             placeholder="0,00" />
                                     </div>
@@ -160,7 +160,7 @@
                                     <label>Valor dos Produtos</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="impostos_vl_produtos" name="impostos_vl_produtos"
                                             placeholder="0,00" />
                                     </div>
@@ -179,7 +179,7 @@
                                         <input type="hidden" class="hidden no-required" id="ret_aliquota_irrf"
                                             value="{%ret_aliquota_irrf%}" />
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="ret_vl_base_irrf" name="ret_vl_base_irrf"
                                             placeholder="0,00" />
                                     </div>
@@ -191,7 +191,7 @@
                                         <input type="hidden" class="hidden no-required" id="ret_valor_irrf"
                                             value="{%ret_valor_irrf%}" />
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="ret_vl_retencao_irrf" name="ret_vl_retencao_irrf"
                                             placeholder="0,00" />
                                     </div>
@@ -203,7 +203,7 @@
                                         <input type="hidden" class="hidden no-required" id="ret_aliquota_inss"
                                             value="{%ret_aliquota_inss%}" />
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="ret_vl_base_inss" name="ret_vl_base_inss"
                                             placeholder="0,00" />
                                     </div>
@@ -213,7 +213,7 @@
                                     <label>Valor INSS</label>
                                     <div class="mb-4">
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="ret_vl_retencao_inss" name="ret_vl_retencao_inss"
                                             placeholder="0,00" />
                                     </div>
@@ -227,7 +227,7 @@
                                     <div class="mb-4">
                                         <input type="hidden" class="hidden no-required" id="ret_aliquota_pis" />
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="ret_vl_retencao_pis" name="ret_vl_retencao_pis"
                                             placeholder="0,00" />
                                     </div>
@@ -237,7 +237,7 @@
                                     <div class="mb-4">
                                         <input type="hidden" class="hidden no-required" id="ret_aliquota_cofins" />
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="ret_vl_retencao_cofins" name="ret_vl_retencao_cofins"
                                             placeholder="0,00" />
                                     </div>
@@ -247,7 +247,7 @@
                                     <div class="mb-4">
                                         <input type="hidden" class="hidden no-required" id="ret_aliquota_csll" />
                                         <input x-currency
-                                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal text-gray-800 border border-gray-200 rounded float_point moeda-format rtl no-required"
                                             type="text" id="ret_vl_retencao_csll" name="ret_vl_retencao_csll"
                                             placeholder="0,00" />
                                     </div>
@@ -258,7 +258,7 @@
                             </div>
                             <div class="flex flex-1 justify-end">
                                 <button type="button" id="btn-calc-retencoes"
-                                    class="text-center border font-normal py-2 px-3 leading-normal no-underline text-teal-500 border-teal-500 hover:text-white bg-white hover:bg-teal-600" />
+                                    class="text-center border font-normal py-2 px-3 leading-normal no-underline text-teal-500 border-teal-500 hover:text-white hover:bg-teal-600" />
                                 Calcular Retenções
                                 </button>
                             </div>

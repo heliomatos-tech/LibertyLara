@@ -57,7 +57,7 @@
                                 <label for="transp_nu_cpf_cnpj">CPF/CNPJ</label>
                                 <input name="transp_nu_cpf_cnpj" type="text"
                                     class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded cpf_cnpj no-clear"
-                                    id="transp_nu_cpf_cnpj">
+                                    id="transp_nu_cpf_cnpj" x-cpf_cnpj>
                             </div>
 
 
@@ -65,8 +65,8 @@
                                 <div class="md:w-full">
                                     <label for="transp_ds_nome" id="lbrazao">Nome do Transportador</label>
                                     <input name="transp_ds_nome" type="text"
-                                        class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
-                                        id="transp_ds_nome">
+                                        class="form-input appearance-none w-full py-1 px-2 mb-1 text-base uppercase leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
+                                        id="transp_ds_nome" x-upper-input>
                                 </div>
                             </div>
 
@@ -76,18 +76,18 @@
                                 <div class="flex lg:flex-nowrap sm:flex-wrap gap-3">
 
 
-                                    <div class="xsm:w-2/5x md:w-1/5 xpr-2">
+                                    <div class="xsm:w-2/5x md:w-1/5 xpr-3">
                                         <label for="transp_nu_cep">CEP:</label>
                                         <input name="transp_nu_cep" type="text"
-                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded cep"
-                                            id="transp_nu_cep">
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 uppercase text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded cep"
+                                            id="transp_nu_cep" x-mask="99999-999" placeholder="_____-___">
                                     </div>
 
                                     <div class="md:w-full">
                                         <label for="transp_ds_endereco">Endereço:</label>
                                         <input name="transp_ds_endereco" type="text"
                                             class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
-                                            id="transp_ds_endereco">
+                                            id="transp_ds_endereco" x-upper-input>
                                     </div>
 
 
@@ -97,11 +97,11 @@
 
                                 <div class="flex flex-wrap">
 
-                                    <div class="md:w-1/6 sm:w-full pr-2">
+                                    <div class="md:w-1/6 sm:w-full pr-3">
                                         <label for="transp_nu_endereco">Número:</label>
                                         <input name="transp_nu_endereco" type="text"
                                             class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
-                                            id="transp_nu_endereco">
+                                            id="transp_nu_endereco" x-upper-input>
                                     </div>
 
 
@@ -109,24 +109,24 @@
                                         <label for="transp_ds_bairro">Bairro:</label>
                                         <input name="transp_ds_bairro" type="text"
                                             class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
-                                            id="transp_ds_bairro">
+                                            id="transp_ds_bairro" x-upper-input>
                                     </div>
                                 </div>
 
 
                                 <div class="flex flex-wrap ">
 
-                                    <div class="md:w-1/6 sm:w-1/3 pr-2">
+                                    <div class="md:w-1/6 sm:w-1/3 pr-3">
                                         <label for="transp_tp_uf">UF:</label>
                                         <input name="transp_tp_uf" type="text"
                                             class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
-                                            minlength="5" maxlength="2" id="transp_tp_uf">
+                                            minlength="2" maxlength="2" id="transp_tp_uf" x-upper-input>
                                     </div>
                                     <div class="md:w-5/6 sm:w-full">
                                         <label for="transp_ds_cidade">Cidade:</label>
                                         <input name="transp_ds_cidade" type="text"
-                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
-                                            id="transp_ds_cidade">
+                                            class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded uppercase"
+                                            id="transp_ds_cidade" x-upper-input>
                                         <input name="transp_nu_ibge" type="hidden" class="no-required hidden"
                                             id="transp_nu_ibge">
                                     </div>
@@ -138,18 +138,18 @@
 
 
                             <div class="flex flex-wrap ">
-                                <div class="md:w-2/3 sm:w-full pr-2">
+                                <div class="md:w-2/3 sm:w-full pr-3">
                                     <label for="transp_email">E-mail:</label>
                                     <input name="transp_ds_email" type="text"
                                         class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required lowercase"
-                                        id="transp_email">
+                                        id="transp_email" x-lower-input>
                                 </div>
 
                                 <div class="md:w-1/3 sm:w-1/3">
                                     <label for="transp_telefone">Telefone:</label>
                                     <input name="transp_nu_telefone" type="text"
                                         class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded no-required telefone_ddd"
-                                        id="transp_telefone">
+                                        id="transp_telefone" x-phone_ddd>
                                 </div>
                             </div>
 
@@ -171,14 +171,14 @@
                                             id="transp_especie" maxlength="60">
                                     </div>
                                 </div>
-                                <div class="flex flex-wrap ">
-                                    <div class="md:w-1/3 sm:w-1/2">
+                                <div class="flex flex-wrap w-full">
+                                    <div class="md:w-1/3 sm:w-1/2 pr-3">
                                         <label for="transp_quantidade">Quantidade:</label>
                                         <input name="transp_nu_quantidade" type="text"
                                             class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point no-required"
                                             id="transp_quantidade">
                                     </div>
-                                    <div class="md:w-1/3 sm:w-1/2">
+                                    <div class="md:w-1/3 sm:w-1/2 pr-3">
                                         <label for="transp_peso_bruto">Peso Bruto:</label>
                                         <input name="transp_nu_peso_bruto" type="text"
                                             class="form-input appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point no-required"

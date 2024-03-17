@@ -159,8 +159,11 @@ document.addEventListener("alpine:init", () => {
     });
 
     Alpine.directive('phone_ddd', (el) => {
-        const applyPhoneMask = (event) => {
+        const applyMask = (event) => {
             const phone = event.target.value.replace(/\D/g, '');
+            if (phone === '') {
+                return;
+            }
             let mask = '(99) 9999-99999';
             if (phone.length > 10) {
                 mask = '(99) 99999-9999';
@@ -177,7 +180,7 @@ document.addEventListener("alpine:init", () => {
             }
             event.target.value = maskedValue;
         };
-        ['blur', 'keyup', 'keypress'].forEach(event => el.addEventListener(event, applyPhoneMask));
+        ['blur', 'keyup', 'keypress'].forEach(event => el.addEventListener(event, applyMask));
     });
     Alpine.directive('currency', (el, _p = 2) => {
         _p = parseInt(el.getAttribute('x-currency')) || _p;

@@ -26,10 +26,10 @@
                             <div class="flex w-full">
 
                                 <input name="dest_nu_cpf_cnpj" type="text"
-                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj no-clear"
+                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj no-clear !rounded-r-none"
                                     id="dest_nu_cpf_cnpj" x-cpf_cnpj>
                                 <button id="btn-localiza-cliente"
-                                    class="inline-block rounded-r rounded-l-none text-2xl px-2 border border-l-0 border-dark dark:text-gray-300 dark:border-gray-600 dark:bg-black hover:bg-gray-200 hover:dark:bg-[#8a87873d] hover:text-[#717171] dark:hover:bg-red hover:dark:text-white/80"
+                                    class="inline-block rounded-r rounded-l-none text-2xl px-2 border border-l-0 border-dark dark:text-gray-300 xdark:border-gray-600 dark:bg-black hover:bg-gray-200 hover:dark:bg-[#8a87873d] hover:text-[#717171] hover:dark:text-white/80"
                                     title="Localizar Cliente">
                                     <i class="ri-search-line"></i>
                                 </button>
@@ -118,7 +118,7 @@
                                     class="text-base text-black dark:text-white/80 mb-4 upper-input">UF:</label>
                                 <input name="dest_tp_uf" type="text" x-upper-input
                                     class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj uppercase"
-                                    minlength="2" maxlength="2" id="dest_tp_uf" placeholder="UF">
+                                    minlength="2" maxlength="2" id="dest_tp_uf">
                             </div>
                             <div class="md:w-3/6">
                                 <label for="dest_ds_cidade"
@@ -159,7 +159,7 @@
                     x-on:click="closeModal($event)">Cancelar
                 </button>
 
-                <button id="btn-salva-cliente" xx-data="processClient"
+                <button id="btn-salva-cliente" x-data="processClient"
                     class="py-2 px-4 border font-normal leading-normal no-underline text-teal-500 border-teal-500 hover:text-white hover:bg-teal-600"
                     x-on:click="clientConfirm()">
                     Confirmar
@@ -174,14 +174,10 @@
         clientConfirm() {
             console.log('Clicou no process confirm');
         },
-        // Outras funções...
     };
-
     handleSituacaoDestinatario = {
         onChange(_v) {
             document.querySelector('input[name="tipo_destinatario"]').value = _v;
-            console.log('Alterou o tipo de destinatario para ' + _v);
-
         }
     }
 </script>

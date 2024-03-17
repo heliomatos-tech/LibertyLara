@@ -31,7 +31,7 @@
                 <button
                     class="dark border rounded btn-default dark:text-white/80 border-gray-600 hover:text-white dark:bg-black hover:bg-[#55555582] !py-2 !px-3"
                     x-on:click="openModal('nfe-transporte')">
-                    Trasnsporte/Frete
+                    Transporte/Frete/Volumes
                 </button>
 
                 <button
@@ -202,7 +202,8 @@
                             <div class="flex items-stretch w-full mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                    type="text" id="vl_frete" name="vl_frete" data-decimals="2" value="" />
+                                    type="text" id="vl_frete" name="vl_frete" data-decimals="2" value=""
+                                    x-currency />
                             </div>
                         </div>
                         <div class="md:w-1/5">
@@ -210,7 +211,8 @@
                             <div class="flex items-stretch w-full mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                    type="text" id="vl_seguro" name="vl_seguro" data-decimals="2" value="" />
+                                    type="text" id="vl_seguro" name="vl_seguro" data-decimals="2" value=""
+                                    x-currency />
                             </div>
                         </div>
                         <div class="md:w-1/5">
@@ -218,7 +220,8 @@
                             <div class="flex items-stretch w-full mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                    type="text" id="vl_outras" name="vl_outras" data-decimals="2" value="" />
+                                    type="text" id="vl_outras" name="vl_outras" data-decimals="2" value=""
+                                    x-currency />
                             </div>
                         </div>
                         <div class="md:w-1/5">
@@ -226,8 +229,8 @@
                             <div class="flex items-stretch w-full mb-4">
                                 <input
                                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded float_point total-ratear moeda-format form-input"
-                                    type="text" id="vl_desconto" name="vl_desconto" data-decimals="2"
-                                    value="" />
+                                    type="text" id="vl_desconto" name="vl_desconto" data-decimals="2" value=""
+                                    x-currency />
                             </div>
                         </div>
                     </div>
