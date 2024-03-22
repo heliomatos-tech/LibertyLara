@@ -14,7 +14,7 @@
             </div>
             <div class="modal-body">
 
-                <div class="flex-col w-full">
+                <div class="flex-col w-full" id="form-destinatario">
 
                     <div class="flex w-full mb-4 gap-5">
 
@@ -26,7 +26,7 @@
                             <div class="flex w-full">
 
                                 <input name="dest_nu_cpf_cnpj" type="text"
-                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj no-clear !rounded-r-none"
+                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj no-clear !rounded-r-none required"
                                     id="dest_nu_cpf_cnpj" x-cpf_cnpj>
                                 <button id="btn-localiza-cliente"
                                     class="inline-block rounded-r rounded-l-none text-2xl px-2 border border-l-0 border-dark dark:text-gray-300 xdark:border-gray-600 dark:bg-black hover:bg-gray-200 hover:dark:bg-[#8a87873d] hover:text-[#717171] hover:dark:text-white/80"
@@ -60,7 +60,7 @@
                             <label for="dest_ds_nome" id="lbrazao"
                                 class="text-base text-black dark:text-white/80 mb-4">Nome do Destinatário</label>
                             <input name="dest_ds_nome" type="text" x-upper-input
-                                class="w-full text-base leading-normal form-input uppercase text-gray-800 border border-gray-200 no-clear"
+                                class="w-full text-base leading-normal form-input uppercase text-gray-800 border border-gray-200 no-clear required"
                                 id="dest_ds_nome" maxlength="60" value="">
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                 <label for="dest_nu_cep"
                                     class="text-base text-black dark:text-white/80 mb-4">CEP:</label>
                                 <input name="dest_nu_cep" type="text" x-mask="99999-999" placeholder="_____-___"
-                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj cep no-clear-cep"
+                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj cep no-clear-cep required"
                                     id="dest_nu_cep" value="">
                             </div>
 
@@ -79,7 +79,7 @@
                                 <label for="dest_ds_endereco"
                                     class="text-base text-black dark:text-white/80 mb-4 upper-input">Endereço:</label>
                                 <input name="dest_ds_endereco" type="text" x-upper-input
-                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj rounded uppercase"
+                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj rounded uppercase required"
                                     id="dest_ds_endereco" maxlength="55" value="">
                             </div>
 
@@ -97,7 +97,7 @@
                                 <label for="dest_nu_endereco"
                                     class="text-base text-black dark:text-white/80 mb-4">Número:</label>
                                 <input name="dest_nu_endereco" type="text"
-                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj uppercase"
+                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj uppercase required"
                                     id="dest_nu_endereco" maxlength="20" value="">
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                 <label for="dest_ds_bairro"
                                     class="text-base text-black dark:text-white/80 mb-4">Bairro:</label>
                                 <input name="dest_ds_bairro" type="text" x-upper-input
-                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj uppercase"
+                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj uppercase required"
                                     id="dest_ds_bairro" maxlength="55" value="">
                             </div>
 
@@ -117,14 +117,14 @@
                                 <label for="dest_tp_uf"
                                     class="text-base text-black dark:text-white/80 mb-4 upper-input">UF:</label>
                                 <input name="dest_tp_uf" type="text" x-upper-input
-                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj uppercase"
+                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 cpf_cnpj uppercase required"
                                     minlength="2" maxlength="2" id="dest_tp_uf">
                             </div>
                             <div class="md:w-3/6">
                                 <label for="dest_ds_cidade"
                                     class="text-base text-black dark:text-white/80 mb-4">Cidade:</label>
                                 <input name="dest_ds_cidade" type="text" x-upper-input
-                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 uppercase"
+                                    class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 uppercase required"
                                     id="dest_ds_cidade" maxlength="55" value="">
                                 <input name="dest_nu_ibge" type="hidden" id="dest_nu_ibge" value="">
                             </div>
@@ -136,7 +136,7 @@
                             <label for="dest_ds_email"
                                 class="text-base text-black dark:text-white/80 mb-4">E-mail:</label>
                             <input name="dest_ds_email" type="text" x-lower-input
-                                class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 required lowercase"
+                                class="w-full text-base leading-normal form-input text-gray-800 border border-gray-200 lowercase"
                                 id="dest_ds_email" maxlength="60" value="">
                         </div>
 
@@ -172,7 +172,10 @@
 <script>
     processClient = {
         clientConfirm() {
-            console.log('Clicou no process confirm');
+            if (LM.validateInputs("#form-destinatario", 'required')) {
+                console.log('Formulário validado');
+            }
+            console.log('Clicou no process confirm', 'Formulario não validado');
         },
     };
     handleSituacaoDestinatario = {

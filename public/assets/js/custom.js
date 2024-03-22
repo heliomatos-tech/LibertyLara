@@ -260,5 +260,103 @@ LM = {
             i = parseInt(val = Math.abs(+val || 0).toFixed(_p), 10) + "",
             j = (j = i.length) > 3 ? j % 3 : 0;
         return negative + (j ? i.substr(0, j) + _t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + _t) + (_p ? _d + Math.abs(val - i).toFixed(_p).slice(2) : "");
-    }
+    },
+    getByIdOrClass(_i) {
+        if (_i.charAt(0) === "#") {
+            return document.getElementById(_i.substring(1));
+        }
+        const elements = document.getElementsByClassName(_i);
+        return elements[0];
+    },
+
+
+    validateInputs(el, validationClass = '') {
+        let nr = 0;
+        const target = this.getByIdOrClass(el);
+        let inputs = target.querySelectorAll('select, textarea, input');
+        // let inputs = el.querySelectorAll('select, textarea, input');
+
+        inputs.forEach(input => {
+
+            // Validate only if input matches validationClass (if provided)
+            if (validationClass && !input.classList.contains(validationClass)) {
+                console.log('Não passando para a validação', input.tagName.toLowerCase());
+                return; // Skip this input if it doesn't have the validation class
+            }
+
+            const tag = input.tagName.toLowerCase();
+            const type = input.type;
+
+            console.log('Começando a validação', tag, type, input.tagName);
+
+            // Remove any existing "input-error" class
+            input.classList.remove("input-error");
+
+            switch (tag) {
+                case 'select':
+                    if (input.value.trim() === '') {
+                        input.classList.add("input-error");
+                        nr++;
+                    }
+                    break;
+                default:
+                    switch (type) {
+                        case 'radio':
+                        case 'checkbox':
+                            if (!input.checked) {
+                                input.classList.add("input-error");
+                                nr++;
+                            }
+                            break;
+                        default:
+                            if (input.value === "") {
+                                input.classList.add("input-error");
+                                nr++;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        });
+
+        return nr <= 0; // Return true if no errors (nr is zero)
+    },
+    serializeInputs = function () {
+        let _d = '';
+        $(this).find('select, textarea, input, :button').each(function () {
+            let _n = encodeURI($(this).attr('name'));
+            let _v = encodeURI($(this).val());
+            if (_n !== 'undefined') {
+                _d += ((_d.trim() === '') ? '' : '&') + _n + '=' + _v;
+            }
+        });
+        return _d;
+    },
+    serializeInputsToJSON = function (_s = null) {
+        let o = {}, f = $(this);
+        f.find('select, textarea, input, button').each(function () {
+            let tag = this.tagName.toLowerCase(),
+                tp = this.type;
+            if (!$(this).attr('name')) {
+                return true;
+            }
+            switch (tag) {
+                case 'select':
+                    o[$(this).attr('name')] = this.value;
+                    break;
+                default:
+                    switch (tp) {
+                        case 'radio':
+                        case 'checkbox':
+                            o[$(this).attr('name')] = ($(this).is(':checked')) ? 'on' : 'off';
+                            break;
+                        default:
+                            o[$(this).attr('name')] = $(this).val();
+                            break;
+                    }
+            }
+        });
+        return (_s === true) ? JSON.stringify(o) : o;
+    };
+
 }

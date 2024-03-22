@@ -760,6 +760,9 @@ select {
     scrollbar-width: initial;
 }
 
+.input-error {
+    border-color: #ff0000 !important;
+}
 
 
 /* 1. BASIC */
